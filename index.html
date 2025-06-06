@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sweet Secrets Members Club - Acesso Exclusivo</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <title>House Experience SPFC - Sweet Secrets Members Club</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         * {
@@ -16,7 +16,7 @@
         body {
             background: #000;
             color: #fff;
-            font-family: 'Inter', sans-serif;
+            font-family: 'Montserrat', 'Inter', sans-serif;
             overflow-x: hidden;
             line-height: 1.6;
         }
@@ -48,12 +48,24 @@
         }
 
         .logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .logo-img {
+            height: 35px;
+            width: auto;
+        }
+
+        .logo-text {
             font-family: 'Playfair Display', serif;
-            font-size: 24px;
+            font-size: 20px;
             font-weight: 700;
             color: #fff;
-            text-align: center;
-            letter-spacing: 2px;
+            letter-spacing: 1px;
         }
 
         /* Main Content */
@@ -65,6 +77,28 @@
         .container {
             max-width: 1200px;
             margin: 0 auto;
+        }
+
+        /* Welcome Section */
+        .welcome-section {
+            text-align: center;
+            padding: 40px 0 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            margin-bottom: 40px;
+        }
+
+        .welcome-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .welcome-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(28px, 4vw, 42px);
+            font-weight: 600;
+            color: #fff;
+            margin: 0;
         }
 
         /* Countdown Section - MOVED TO TOP */
@@ -88,6 +122,7 @@
             color: #888;
             margin-bottom: 60px;
             font-weight: 300;
+            font-family: 'Montserrat', sans-serif;
         }
 
         .countdown {
@@ -107,7 +142,7 @@
             color: #fff;
             display: block;
             line-height: 0.9;
-            font-family: 'Inter', sans-serif;
+            font-family: 'Montserrat', sans-serif;
         }
 
         .countdown-label {
@@ -117,6 +152,7 @@
             letter-spacing: 2px;
             margin-top: 10px;
             font-weight: 400;
+            font-family: 'Montserrat', sans-serif;
         }
 
         .countdown-date {
@@ -125,6 +161,7 @@
             font-size: 20px;
             font-weight: 500;
             margin-top: 40px;
+            font-family: 'Montserrat', sans-serif;
         }
 
         /* Golden Ticket (initially hidden) */
@@ -152,6 +189,7 @@
             font-size: 18px;
             margin-bottom: 30px;
             line-height: 1.6;
+            font-family: 'Montserrat', sans-serif;
         }
 
         /* Hero Section - MOVED AFTER COUNTDOWN */
@@ -173,6 +211,7 @@
             color: #888;
             margin-bottom: 40px;
             font-weight: 300;
+            font-family: 'Montserrat', sans-serif;
         }
 
         /* Buttons */
@@ -190,6 +229,7 @@
             transition: all 0.3s ease;
             cursor: pointer;
             font-size: 14px;
+            font-family: 'Montserrat', sans-serif;
         }
 
         .btn:hover {
@@ -238,6 +278,7 @@
             color: #ccc;
             margin-bottom: 20px;
             line-height: 1.8;
+            font-family: 'Montserrat', sans-serif;
         }
 
         .membership-features {
@@ -306,12 +347,25 @@
         }
 
         .benefit-icon {
-            width: 12px;
-            height: 12px;
-            background: #fff;
+            width: 24px;
+            height: 24px;
+            background: linear-gradient(135deg, #fff, #f0f0f0);
             border-radius: 50%;
-            margin-right: 20px;
+            margin-right: 16px;
             flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            font-size: 14px;
+            color: #000;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .benefit-icon::before {
+            content: 'S';
         }
 
         .benefit-title {
@@ -328,6 +382,7 @@
             line-height: 1.7;
             font-weight: 400;
             padding-left: 32px;
+            font-family: 'Montserrat', sans-serif;
         }
 
         /* Social Media */
@@ -390,6 +445,22 @@
                 padding: 15px 20px;
             }
 
+            .logo {
+                gap: 10px;
+            }
+
+            .logo-text {
+                font-size: 16px;
+            }
+
+            .welcome-section {
+                padding: 30px 0 15px;
+            }
+
+            .welcome-title {
+                font-size: 24px;
+            }
+
             .countdown {
                 gap: 30px;
             }
@@ -442,17 +513,29 @@
     
     <!-- Header -->
     <header class="header">
-        <div class="logo">SWEET SECRETS MEMBERS CLUB</div>
+        <div class="logo">
+            <img src="logo.png" alt="Sweet Secrets Logo" class="logo-img">
+            <div class="logo-text">SPFC</div>
+            <div style="margin: 0 20px; color: rgba(255,255,255,0.5);">•</div>
+            <div class="logo-text" style="font-size: 18px; font-weight: 500;">Sweet Secrets Members Club</div>
+        </div>
     </header>
 
     <!-- Main Content -->
     <main class="main-content">
         <div class="container">
             
+            <!-- Welcome Section -->
+            <section class="welcome-section">
+                <div class="welcome-content">
+                    <h1 class="welcome-title">Bem-vindo ao Evento de lançamento House Experience SPFC</h1>
+                </div>
+            </section>
+            
             <!-- Countdown Section - MOVED TO TOP FOR IMMEDIATE IMPACT -->
             <section class="countdown-section" id="countdown-section">
-                <h1 class="countdown-title">Algo está chegando</h1>
-                <p class="countdown-subtitle">Uma revelação que mudará tudo</p>
+                <h1 class="countdown-title">O House Experience está chegando</h1>
+                <p class="countdown-subtitle">Uma experiência única que mudará tudo</p>
                 <div class="countdown" id="countdown">
                     <div class="countdown-item">
                         <span class="countdown-number" id="days">00</span>
@@ -476,10 +559,10 @@
 
             <!-- Golden Ticket (shown after countdown) -->
             <section class="golden-ticket" id="golden-ticket">
-                <h2 class="ticket-title">🎫 Acesso Liberado</h2>
+                <h2 class="ticket-title">🎫 House Experience Liberado</h2>
                 <p class="ticket-text">
-                    <strong>Sua chave desbloqueia um acesso exclusivo ao Sweet Secrets Members Club.</strong><br>
-                    Venha descobrir um mundo onde o extraordinário é apenas o começo.<br>
+                    <strong>O momento chegou! O House Experience SPFC está oficialmente aberto.</strong><br>
+                    Venha descobrir um mundo onde futebol, luxo e exclusividade se encontram.<br>
                     Agende sua visita com nosso Concierge.
                 </p>
                 <a href="#" class="btn btn-primary pulse">Agendar Visita Exclusiva</a>
@@ -487,11 +570,11 @@
 
             <!-- Hero Section -->
             <section class="hero">
-                <h2 class="hero-title">Um clube de exclusividade</h2>
-                <p class="hero-subtitle">Sua chave esconde um segredo</p>
+                <h2 class="hero-title">Uma nova era de exclusividade</h2>
+                <p class="hero-subtitle">O House Experience SPFC chegou</p>
                 
                 <div class="btn-center">
-                    <a href="#" class="btn btn-primary">📸 Fotos de Hoje</a>
+                    <a href="#" class="btn btn-primary">📸 Fotos do Evento</a>
                 </div>
             </section>
 
@@ -499,14 +582,14 @@
             <section class="about-section">
                 <div class="about-content">
                     <div class="about-text">
-                        <h2>O Clube Mais Inusitado do Mundo</h2>
+                        <h2>O Clube Mais Inusitado de São Paulo</h2>
                         <p>
                             O <strong>Sweet Secrets Members Club</strong> não é apenas um lugar — é uma experiência que transcende limites. 
                             Criamos momentos únicos que existem apenas para aqueles que compreendem que o verdadeiro luxo está no inacessível.
                         </p>
                         <p>
                             Cada membro faz parte de uma comunidade seleta que vive experiências extraordinárias, 
-                            tanto dentro quanto fora do nosso santuário exclusivo. 
+                            tanto dentro quanto fora do nosso espaço exclusivo. 
                             Aqui, o impossível torna-se possível.
                         </p>
                         <p>
@@ -514,11 +597,17 @@
                         </p>
                     </div>
                     <div class="about-visual">
-                        <!-- Placeholder for video/images -->
-                        <div style="background: rgba(255, 255, 255, 0.05); border: 2px dashed #fff; border-radius: 15px; padding: 60px; text-align: center; color: #fff;">
-                            <i class="fas fa-play-circle" style="font-size: 48px; margin-bottom: 20px;"></i>
-                            <p>Vídeo do Cartão Dourado</p>
-                        </div>
+                        <!-- Vídeo do cartão dourado -->
+                        <video 
+                            width="100%" 
+                            height="300" 
+                            controls 
+                            poster="video-thumb.jpg"
+                            style="border-radius: 15px; box-shadow: 0 10px 30px rgba(255, 255, 255, 0.1);">
+                            <source src="cartao-dourado.mp4" type="video/mp4">
+                            <source src="cartao-dourado.webm" type="video/webm">
+                            Seu navegador não suporta o elemento de vídeo.
+                        </video>
                     </div>
                 </div>
             </section>
@@ -532,11 +621,11 @@
                         <div class="benefit-content">
                             <div class="benefit-header">
                                 <div class="benefit-icon"></div>
-                                <h3 class="benefit-title">Reuniões Estratégicas</h3>
+                                <h3 class="benefit-title">Espaço Físico como Ativo Estratégico</h3>
                             </div>
                             <p class="benefit-description">
-                                Acesso à sala VIP para reuniões exclusivas com reserva antecipada. 
-                                Ambiente sofisticado para discussões de alto nível.
+                                A atmosfera de <strong>speakeasy</strong> transporta nossos membros para um ambiente <strong>intimista</strong>, 
+                                <strong>sofisticado e reservado</strong>, ideal para <strong>conexões discretas</strong>, encontros relevantes e momentos de pausa com excelência.
                             </p>
                         </div>
                     </div>
@@ -545,11 +634,11 @@
                         <div class="benefit-content">
                             <div class="benefit-header">
                                 <div class="benefit-icon"></div>
-                                <h3 class="benefit-title">Acesso com Convidados</h3>
+                                <h3 class="benefit-title">Serviços On-Demand</h3>
                             </div>
                             <p class="benefit-description">
-                                Frequente o clube com até 10 VIPs por visita. 
-                                Seus convidados podem vir mesmo sem você estar presente.
+                                Em qualquer momento, conte com a gente. Concierge <strong>24/7 altamente personalizado</strong> 
+                                para agendar reuniões, reservar espaços e coordenar visitas: tudo com <strong>agilidade</strong>, mesmo à distância.
                             </p>
                         </div>
                     </div>
@@ -558,11 +647,11 @@
                         <div class="benefit-content">
                             <div class="benefit-header">
                                 <div class="benefit-icon"></div>
-                                <h3 class="benefit-title">Prêmios para Equipe</h3>
+                                <h3 class="benefit-title">Conexões Estratégicas 1:1</h3>
                             </div>
                             <p class="benefit-description">
-                                Ofereça aos seus colaboradores o privilégio de acessar o Sweet Secrets 
-                                em momentos especiais, abatendo do seu saldo.
+                                <strong>Matchmaking estratégico</strong>: o <strong>único lugar em São Paulo</strong> que oferece encontros direcionados 
+                                com <strong>C-Levels, founders e investidores</strong>, além de mentorias e consultorias <strong>sob medida</strong>.
                             </p>
                         </div>
                     </div>
@@ -571,11 +660,11 @@
                         <div class="benefit-content">
                             <div class="benefit-header">
                                 <div class="benefit-icon"></div>
-                                <h3 class="benefit-title">Eventos Exclusivos</h3>
+                                <h3 class="benefit-title">Acesso a Jantares, Imersões e Eventos</h3>
                             </div>
                             <p class="benefit-description">
-                                Palestras com personalidades renomadas, festas all inclusive 
-                                e Petit Comitês mensais onde líderes de mercado se encontram para trocar ideias e criar laços únicos.
+                                Ao longo do ano, membros são convidados para jantares com <strong>nomes influentes do mercado</strong>, 
+                                imersões que provocam <strong>novas perspectivas</strong> e encontros que transitam entre o reservado e o <strong>extraordinário</strong>.
                             </p>
                         </div>
                     </div>
@@ -584,50 +673,12 @@
                         <div class="benefit-content">
                             <div class="benefit-header">
                                 <div class="benefit-icon"></div>
-                                <h3 class="benefit-title">Ambiente Inspirador</h3>
+                                <h3 class="benefit-title">Clube como Plataforma</h3>
                             </div>
                             <p class="benefit-description">
-                                Arquitetura singular, gastronomia estrela Michelin e mixologia mundialmente premiada. 
-                                Experiências memoráveis garantidas.
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="benefit-item">
-                        <div class="benefit-content">
-                            <div class="benefit-header">
-                                <div class="benefit-icon"></div>
-                                <h3 class="benefit-title">Ativações Personalizadas</h3>
-                            </div>
-                            <p class="benefit-description">
-                                Surpresas especiais em datas importantes como aniversários 
-                                e celebrações exclusivas do membro.
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="benefit-item">
-                        <div class="benefit-content">
-                            <div class="benefit-header">
-                                <div class="benefit-icon"></div>
-                                <h3 class="benefit-title">Primeira Rolha Grátis</h3>
-                            </div>
-                            <p class="benefit-description">
-                                Traga seu vinho, champanhe ou whisky favorito. 
-                                Uma rolha por reserva cortesia da casa.
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="benefit-item">
-                        <div class="benefit-content">
-                            <div class="benefit-header">
-                                <div class="benefit-icon"></div>
-                                <h3 class="benefit-title">Sweet Experiences</h3>
-                            </div>
-                            <p class="benefit-description">
-                                Seu passaporte para experiências únicas além do clube. 
-                                Vivências exclusivas focadas na pessoa física.
+                                Mais que um local físico, somos um <strong>hub de experiências e influência</strong>. 
+                                Com agenda ativa de talks e painéis com <strong>personalidades nacionais e internacionais</strong>, 
+                                conectamos você a <strong>líderes que moldam o futuro</strong>.
                             </p>
                         </div>
                     </div>
@@ -637,12 +688,17 @@
 
             <!-- Social Media -->
             <section class="social-section">
-                <h2 class="social-title">Siga Nossos Segredos</h2>
+                <h2 class="social-title">Conecte-se Conosco</h2>
                 <div class="social-links">
-                    <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
-                    <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
-                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-                    <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                    <a href="https://www.instagram.com/swtsecrets" target="_blank" class="social-link" title="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/company/swtsecrets/posts/?feedView=all" target="_blank" class="social-link" title="LinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://wa.me/5511913079456" target="_blank" class="social-link" title="Concierge WhatsApp">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
                 </div>
             </section>
 
