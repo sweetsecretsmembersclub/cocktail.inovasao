@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sweet Secrets Members Club - Acesso Exclusivo</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #000;
+            color: #fff;
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        /* Background Pattern */
+        .bg-pattern {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.03) 0%, transparent 50%),
+                radial-gradient(circle at 40% 80%, rgba(255, 255, 255, 0.04) 0%, transparent 50%);
+            z-index: -1;
+        }
+
+        /* Header */
+        .header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 20px 40px;
+            background: rgba(0, 0, 0, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            z-index: 1000;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            font-weight: 700;
+            color: #fff;
+            text-align: center;
+            letter-spacing: 2px;
+        }
+
+        /* Main Content */
+        .main-content {
+            margin-top: 100px;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Countdown Section - MOVED TO TOP */
+        .countdown-section {
+            text-align: center;
+            padding: 80px 20px;
+            margin-bottom: 60px;
+        }
+
+        .countdown-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(32px, 5vw, 48px);
+            color: #fff;
+            margin-bottom: 20px;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+        }
+
+        .countdown-subtitle {
+            font-size: 18px;
+            color: #888;
+            margin-bottom: 60px;
+            font-weight: 300;
+        }
+
+        .countdown {
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+            margin-bottom: 40px;
+        }
+
+        .countdown-item {
+            text-align: center;
+        }
+
+        .countdown-number {
+            font-size: clamp(64px, 8vw, 120px);
+            font-weight: 300;
+            color: #fff;
+            display: block;
+            line-height: 0.9;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .countdown-label {
+            font-size: 14px;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-top: 10px;
+            font-weight: 400;
+        }
+
+        .countdown-date {
+            text-align: center;
+            color: #fff;
+            font-size: 20px;
+            font-weight: 500;
+            margin-top: 40px;
+        }
+
+        /* Golden Ticket (initially hidden) */
+        .golden-ticket {
+            display: none;
+            background: linear-gradient(135deg, #fff, #f5f5f5);
+            border-radius: 20px;
+            padding: 40px;
+            margin: 60px auto;
+            max-width: 600px;
+            text-align: center;
+            color: #000;
+            box-shadow: 0 20px 60px rgba(255, 255, 255, 0.1);
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .ticket-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .ticket-text {
+            font-size: 18px;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        /* Hero Section - MOVED AFTER COUNTDOWN */
+        .hero {
+            text-align: center;
+            padding: 60px 0;
+        }
+
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(36px, 6vw, 72px);
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+
+        .hero-subtitle {
+            font-size: 18px;
+            color: #888;
+            margin-bottom: 40px;
+            font-weight: 300;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 15px 40px;
+            border: 2px solid #fff;
+            background: transparent;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .btn:hover {
+            background: #fff;
+            color: #000;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(255, 255, 255, 0.2);
+        }
+
+        .btn-primary {
+            background: #fff;
+            color: #000;
+        }
+
+        .btn-primary:hover {
+            background: #f5f5f5;
+        }
+
+        .btn-center {
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        /* About Section */
+        .about-section {
+            padding: 80px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .about-text h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 42px;
+            color: #fff;
+            margin-bottom: 30px;
+        }
+
+        .about-text p {
+            font-size: 18px;
+            color: #ccc;
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+
+        .membership-features {
+            padding: 80px 0;
+            margin: 60px 0;
+        }
+
+        .features-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 42px;
+            color: #fff;
+            text-align: center;
+            margin-bottom: 60px;
+            font-weight: 600;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .benefit-item {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.01));
+            border-left: 3px solid #fff;
+            padding: 35px 30px;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .benefit-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.05), transparent);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            z-index: 1;
+        }
+
+        .benefit-item:hover::before {
+            opacity: 1;
+        }
+
+        .benefit-item:hover {
+            transform: translateX(10px);
+            border-left-color: #fff;
+            box-shadow: -5px 0 30px rgba(255, 255, 255, 0.1);
+        }
+
+        .benefit-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .benefit-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .benefit-icon {
+            width: 12px;
+            height: 12px;
+            background: #fff;
+            border-radius: 50%;
+            margin-right: 20px;
+            flex-shrink: 0;
+        }
+
+        .benefit-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 22px;
+            font-weight: 600;
+            color: #fff;
+            line-height: 1.3;
+        }
+
+        .benefit-description {
+            color: #ccc;
+            font-size: 15px;
+            line-height: 1.7;
+            font-weight: 400;
+            padding-left: 32px;
+        }
+
+        /* Social Media */
+        .social-section {
+            text-align: center;
+            padding: 60px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .social-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            color: #fff;
+            margin-bottom: 30px;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .social-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            border: 2px solid #fff;
+            border-radius: 50%;
+            color: #fff;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            background: #fff;
+            color: #000;
+            transform: translateY(-3px);
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .pulse {
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header {
+                padding: 15px 20px;
+            }
+
+            .countdown {
+                gap: 30px;
+            }
+
+            .countdown-number {
+                font-size: clamp(48px, 12vw, 80px);
+            }
+
+            .countdown-label {
+                font-size: 12px;
+                margin-top: 8px;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+
+            .benefit-item {
+                padding: 25px 20px;
+            }
+
+            .benefit-title {
+                font-size: 20px;
+            }
+
+            .benefit-description {
+                font-size: 14px;
+                padding-left: 32px;
+            }
+
+            .social-links {
+                gap: 15px;
+            }
+
+            .btn {
+                padding: 12px 30px;
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-pattern"></div>
+    
+    <!-- Header -->
+    <header class="header">
+        <div class="logo">SWEET SECRETS MEMBERS CLUB</div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            
+            <!-- Countdown Section - MOVED TO TOP FOR IMMEDIATE IMPACT -->
+            <section class="countdown-section" id="countdown-section">
+                <h1 class="countdown-title">Algo está chegando</h1>
+                <p class="countdown-subtitle">Uma revelação que mudará tudo</p>
+                <div class="countdown" id="countdown">
+                    <div class="countdown-item">
+                        <span class="countdown-number" id="days">00</span>
+                        <span class="countdown-label">Dias</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span class="countdown-number" id="hours">00</span>
+                        <span class="countdown-label">Horas</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span class="countdown-number" id="minutes">00</span>
+                        <span class="countdown-label">Minutos</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span class="countdown-number" id="seconds">00</span>
+                        <span class="countdown-label">Segundos</span>
+                    </div>
+                </div>
+                <div class="countdown-date">26 de Junho • 19h00</div>
+            </section>
+
+            <!-- Golden Ticket (shown after countdown) -->
+            <section class="golden-ticket" id="golden-ticket">
+                <h2 class="ticket-title">🎫 Acesso Liberado</h2>
+                <p class="ticket-text">
+                    <strong>Sua chave desbloqueia um acesso exclusivo ao Sweet Secrets Members Club.</strong><br>
+                    Venha descobrir um mundo onde o extraordinário é apenas o começo.<br>
+                    Agende sua visita com nosso Concierge.
+                </p>
+                <a href="#" class="btn btn-primary pulse">Agendar Visita Exclusiva</a>
+            </section>
+
+            <!-- Hero Section -->
+            <section class="hero">
+                <h2 class="hero-title">Um clube de exclusividade</h2>
+                <p class="hero-subtitle">Sua chave esconde um segredo</p>
+                
+                <div class="btn-center">
+                    <a href="#" class="btn btn-primary">📸 Fotos de Hoje</a>
+                </div>
+            </section>
+
+            <!-- About Section -->
+            <section class="about-section">
+                <div class="about-content">
+                    <div class="about-text">
+                        <h2>O Clube Mais Inusitado do Mundo</h2>
+                        <p>
+                            O <strong>Sweet Secrets Members Club</strong> não é apenas um lugar — é uma experiência que transcende limites. 
+                            Criamos momentos únicos que existem apenas para aqueles que compreendem que o verdadeiro luxo está no inacessível.
+                        </p>
+                        <p>
+                            Cada membro faz parte de uma comunidade seleta que vive experiências extraordinárias, 
+                            tanto dentro quanto fora do nosso santuário exclusivo. 
+                            Aqui, o impossível torna-se possível.
+                        </p>
+                        <p>
+                            <em>Porque alguns segredos só podem ser compartilhados entre poucos.</em>
+                        </p>
+                    </div>
+                    <div class="about-visual">
+                        <!-- Placeholder for video/images -->
+                        <div style="background: rgba(255, 255, 255, 0.05); border: 2px dashed #fff; border-radius: 15px; padding: 60px; text-align: center; color: #fff;">
+                            <i class="fas fa-play-circle" style="font-size: 48px; margin-bottom: 20px;"></i>
+                            <p>Vídeo do Cartão Dourado</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Membership Features -->
+            <section class="membership-features">
+                <h2 class="features-title">Benefícios Exclusivos da Membership</h2>
+                <div class="features-grid">
+                    
+                    <div class="benefit-item">
+                        <div class="benefit-content">
+                            <div class="benefit-header">
+                                <div class="benefit-icon"></div>
+                                <h3 class="benefit-title">Reuniões Estratégicas</h3>
+                            </div>
+                            <p class="benefit-description">
+                                Acesso à sala VIP para reuniões exclusivas com reserva antecipada. 
+                                Ambiente sofisticado para discussões de alto nível.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="benefit-item">
+                        <div class="benefit-content">
+                            <div class="benefit-header">
+                                <div class="benefit-icon"></div>
+                                <h3 class="benefit-title">Acesso com Convidados</h3>
+                            </div>
+                            <p class="benefit-description">
+                                Frequente o clube com até 10 VIPs por visita. 
+                                Seus convidados podem vir mesmo sem você estar presente.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="benefit-item">
+                        <div class="benefit-content">
+                            <div class="benefit-header">
+                                <div class="benefit-icon"></div>
+                                <h3 class="benefit-title">Prêmios para Equipe</h3>
+                            </div>
+                            <p class="benefit-description">
+                                Ofereça aos seus colaboradores o privilégio de acessar o Sweet Secrets 
+                                em momentos especiais, abatendo do seu saldo.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="benefit-item">
+                        <div class="benefit-content">
+                            <div class="benefit-header">
+                                <div class="benefit-icon"></div>
+                                <h3 class="benefit-title">Eventos Exclusivos</h3>
+                            </div>
+                            <p class="benefit-description">
+                                Palestras com personalidades renomadas, festas all inclusive 
+                                e Petit Comitês mensais onde líderes de mercado se encontram para trocar ideias e criar laços únicos.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="benefit-item">
+                        <div class="benefit-content">
+                            <div class="benefit-header">
+                                <div class="benefit-icon"></div>
+                                <h3 class="benefit-title">Ambiente Inspirador</h3>
+                            </div>
+                            <p class="benefit-description">
+                                Arquitetura singular, gastronomia estrela Michelin e mixologia mundialmente premiada. 
+                                Experiências memoráveis garantidas.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="benefit-item">
+                        <div class="benefit-content">
+                            <div class="benefit-header">
+                                <div class="benefit-icon"></div>
+                                <h3 class="benefit-title">Ativações Personalizadas</h3>
+                            </div>
+                            <p class="benefit-description">
+                                Surpresas especiais em datas importantes como aniversários 
+                                e celebrações exclusivas do membro.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="benefit-item">
+                        <div class="benefit-content">
+                            <div class="benefit-header">
+                                <div class="benefit-icon"></div>
+                                <h3 class="benefit-title">Primeira Rolha Grátis</h3>
+                            </div>
+                            <p class="benefit-description">
+                                Traga seu vinho, champanhe ou whisky favorito. 
+                                Uma rolha por reserva cortesia da casa.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="benefit-item">
+                        <div class="benefit-content">
+                            <div class="benefit-header">
+                                <div class="benefit-icon"></div>
+                                <h3 class="benefit-title">Sweet Experiences</h3>
+                            </div>
+                            <p class="benefit-description">
+                                Seu passaporte para experiências únicas além do clube. 
+                                Vivências exclusivas focadas na pessoa física.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- Social Media -->
+            <section class="social-section">
+                <h2 class="social-title">Siga Nossos Segredos</h2>
+                <div class="social-links">
+                    <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <script>
+        // Countdown Timer
+        const countdownDate = new Date("June 26, 2025 19:00:00").getTime();
+        
+        const countdownTimer = setInterval(function() {
+            const now = new Date().getTime();
+            const distance = countdownDate - now;
+            
+            if (distance < 0) {
+                // Show golden ticket when countdown ends
+                document.getElementById("countdown-section").style.display = "none";
+                document.getElementById("golden-ticket").style.display = "block";
+                clearInterval(countdownTimer);
+                return;
+            }
+            
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            
+            document.getElementById("days").textContent = days.toString().padStart(2, '0');
+            document.getElementById("hours").textContent = hours.toString().padStart(2, '0');
+            document.getElementById("minutes").textContent = minutes.toString().padStart(2, '0');
+            document.getElementById("seconds").textContent = seconds.toString().padStart(2, '0');
+        }, 1000);
+
+        // Smooth scroll for internal links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+
+        // Add entrance animations
+        window.addEventListener('load', function() {
+            const heroElements = document.querySelectorAll('.hero *');
+            heroElements.forEach((el, index) => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(30px)';
+                setTimeout(() => {
+                    el.style.transition = 'all 0.8s ease';
+                    el.style.opacity = '1';
+                    el.style.transform = 'translateY(0)';
+                }, index * 200);
+            });
+        });
+    </script>
+</body>
+</html>
