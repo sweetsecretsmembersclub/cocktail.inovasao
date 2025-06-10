@@ -224,23 +224,24 @@
             border-radius: 20px;
         }
 
-        /* Using exact same style as countdown-title */
+        /* Estilo compartilhado para títulos */
         .countdown-title,
-        .about-text .sub-about-title {
+        .countdown-style {
             font-family: 'Playfair Display', serif;
-            font-size: clamp(28px, 7vw, 42px);
+            font-size: clamp(22px, 6vw, 36px);
             color: #f8f8f8;
             font-weight: 600;
             letter-spacing: -0.01em;
         }
-
+        
         .countdown-title {
             margin-bottom: 16px;
         }
 
-        .about-text .sub-about-title {
+        /* Sub About Title específico */
+        .sub-about-title {
             margin-bottom: 80px;
-            margin-top: 60px;
+            margin-top: 120px; /* BEM AFASTADO */
             line-height: 1.2;
             position: relative;
             text-align: center;
@@ -428,7 +429,7 @@
             background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
         }
 
-        .about-text .main-about-title {
+        .main-about-title {
             font-family: 'Playfair Display', serif;
             font-size: clamp(36px, 6vw, 64px);
             color: #f8f8f8;
@@ -444,7 +445,7 @@
 
 
 
-        .about-text .sub-about-title::after {
+        .sub-about-title::after {
             content: '';
             position: absolute;
             bottom: -24px;
@@ -1039,7 +1040,7 @@
                 width: 40px;
             }
 
-            .about-text .main-about-title {
+            .main-about-title {
                 font-size: clamp(28px, 7vw, 40px);
                 margin-bottom: 32px;
             }
@@ -1051,7 +1052,7 @@
 
             .about-text .sub-about-title {
                 margin-bottom: 50px;
-                margin-top: 40px;
+                margin-top: 80px; /* Aumentado para afastar */
                 text-align: center;
             }
 
@@ -1197,15 +1198,7 @@
                 font-size: 14px;
             }
 
-            .countdown-title,
-            .about-text .sub-about-title {
-                font-size: clamp(22px, 6vw, 32px);
-            }
 
-            .about-text .sub-about-title {
-                margin-bottom: 32px;
-                margin-top: 24px;
-            }
         }
 
         /* Extra Small Devices */
@@ -1231,20 +1224,12 @@
                 margin: 16px 0;
             }
 
-            .about-text .main-about-title {
+            .main-about-title {
                 font-size: clamp(16px, 10vw, 22px);
                 margin-bottom: 16px;
             }
 
-            .countdown-title,
-            .about-text .sub-about-title {
-                font-size: clamp(22px, 6vw, 32px);
-            }
 
-            .about-text .sub-about-title {
-                margin-bottom: 32px;
-                margin-top: 24px;
-            }
 
             .about-intro {
                 font-size: clamp(15px, 8vw, 18px);
@@ -1323,7 +1308,7 @@
             
             <!-- Countdown Section -->
             <section class="countdown-section" id="countdown">
-                <h2 class="countdown-title">Algo especial está chegando</h2>
+                            <h2 class="countdown-title">Algo especial está chegando</h2>
                 <p class="countdown-subtitle">A chave que você recebeu guarda segredos que poucos conhecem. Uma revelação extraordinária está por vir... Mantenha-se atento!</p>
                 <div class="countdown" id="countdown-timer">
                     <div class="countdown-item">
@@ -1368,7 +1353,7 @@
                     <div class="about-content">
                         <div class="about-header">
                             <h2 class="main-about-title">O encontro de hoje foi desenhado em parceria com o Sweet Secrets Members Club</h2>
-                            <h3 class="sub-about-title">O que é o Sweet Secrets Members Club?</h3>
+                            <h1 class="sub-about-title countdown-style">O que é o Sweet Secrets Members Club?</h1>
                         </div>
                         
                         <div class="about-editorial">
