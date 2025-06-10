@@ -129,33 +129,48 @@
 
         .hero-pretext {
             font-family: 'Montserrat', sans-serif;
-            font-size: 12px;
+            font-size: 13px; /* AUMENTADO de 12px */
             color: rgba(248, 248, 248, 0.5);
             text-transform: uppercase;
-            letter-spacing: 3px;
-            margin-bottom: 32px;
+            letter-spacing: 4px; /* AUMENTADO de 3px */
+            margin-bottom: 36px; /* AUMENTADO de 32px */
             font-weight: 500;
             opacity: 0;
             animation: fadeInUp 1.2s ease 0.3s forwards;
         }
 
         .partner-logo {
-            margin-bottom: 40px;
+            margin-bottom: 60px; /* AUMENTADO de 40px para 60px */
             opacity: 0;
             animation: fadeInUp 1.2s ease 0.6s forwards;
+            position: relative;
+            display: inline-block;
+        }
+
+        .partner-logo::after {
+            content: '';
+            position: absolute;
+            bottom: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
         }
 
         .partner-logo-img {
-            height: 60px;
+            height: 100px; /* AUMENTADO de 60px para 100px */
             width: auto;
-            max-width: 280px;
+            max-width: 400px; /* AUMENTADO de 280px para 400px */
             filter: brightness(1.05) saturate(1.1);
             transition: all 0.4s ease;
+            opacity: 0.95; /* Leve transparência para elegância */
         }
 
         .partner-logo-img:hover {
-            transform: scale(1.03);
-            filter: brightness(1.15) saturate(1.2);
+            transform: scale(1.05); /* Aumentado de 1.03 */
+            filter: brightness(1.2) saturate(1.2); /* Mais brilho no hover */
+            opacity: 1;
         }
 
         .hero-title {
@@ -935,12 +950,17 @@
             }
 
             .partner-logo {
-                margin-bottom: 24px;
+                margin-bottom: 40px; /* AUMENTADO de 24px para 40px */
+            }
+
+            .partner-logo::after {
+                bottom: -10px;
+                width: 60px;
             }
 
             .partner-logo-img {
-                height: 48px;
-                max-width: 220px;
+                height: 80px; /* AUMENTADO de 48px para 80px */
+                max-width: 320px; /* AUMENTADO de 220px para 320px */
             }
 
             .countdown-section {
@@ -1118,18 +1138,23 @@
             }
 
             .hero-pretext {
-                font-size: 10px;
-                letter-spacing: 2px;
-                margin-bottom: 16px;
+                font-size: 11px; /* AUMENTADO de 10px */
+                letter-spacing: 2.5px; /* AUMENTADO de 2px */
+                margin-bottom: 20px; /* AUMENTADO de 16px */
             }
 
             .partner-logo {
-                margin-bottom: 20px;
+                margin-bottom: 32px; /* AUMENTADO de 20px para 32px */
+            }
+
+            .partner-logo::after {
+                bottom: -8px;
+                width: 50px;
             }
 
             .partner-logo-img {
-                height: 40px;
-                max-width: 200px;
+                height: 65px; /* AUMENTADO de 40px para 65px */
+                max-width: 280px; /* AUMENTADO de 200px para 280px */
             }
 
             .hero-description {
