@@ -524,6 +524,8 @@
 
         .about-column p {
             margin-bottom: 24px;
+            text-align: justify;
+            hyphens: auto;
         }
 
         .about-highlight {
@@ -626,6 +628,7 @@
             text-transform: uppercase;
             letter-spacing: 2px;
             margin-bottom: 8px;
+            white-space: nowrap;
         }
 
         .stat-value {
@@ -1001,6 +1004,10 @@
                 grid-template-columns: 1fr;
                 gap: 24px;
             }
+            
+            .about-column p {
+                text-align: left;
+            }
 
             .about-intro {
                 font-size: clamp(20px, 5vw, 28px);
@@ -1038,12 +1045,19 @@
 
             .about-stat {
                 flex: 1;
-                padding: 16px 0;
+                padding: 12px 0;
                 text-align: center;
             }
-
+            
+            .stat-label {
+                font-size: 10px;
+                white-space: normal;
+                letter-spacing: 1px;
+            }
+            
             .stat-value {
-                font-size: 18px;
+                font-size: 13px;
+                line-height: 1.1;
             }
 
             .about-highlight {
@@ -1267,7 +1281,12 @@
             }
 
             .about-column {
-                font-size: 13px;
+                font-size: 14px;
+            }
+            
+            .about-column p {
+                text-align: left;
+                margin-bottom: 20px;
             }
 
             .about-logo-mark {
@@ -1319,22 +1338,22 @@
                 </div>
                 <h1 class="hero-title">House Experience São Paulo FC</h1>
                 <p class="hero-description">
-                    Uma experiência única onde futebol, luxo e exclusividade se encontram em jogadas estratégicas com as nossas marcas favoritas, impactando gerações. Chegou a hora de transformar o Sportainment no Brasil.<br><br>
-                    Ídolos, lendas do futebol, executivos das maiores marcas do mundo e muitas conexões em uma experiência imersiva. Aqui, Criatividade, Tecnologia & Inovação jogam juntas para gerar resultados de impacto extrapolando o estádio de futebol.
+                    O São Paulo FC conecta-se com líderes globais para criar um ecossistema único onde esporte, negócios e inovação convergem em oportunidades extraordinárias.<br><br>
+                    Ídolos do futebol encontram visionários de todos os setores. Aqui nascem as parcerias que definem o futuro do entretenimento, tecnologia e muito mais.
                 </p>
                 <div class="hero-cta">
-                    <a href="#countdown" class="btn">Descubra Mais</a>
+                    <a href="#countdown" class="btn">Desbloqueie o Futuro</a>
                 </div>
                 <div class="hero-footer">
                     <div class="hero-powered">House Experience powered by Inova.SÃO (o hub de inovação do São Paulo Futebol Clube)</div>
-                    <div class="hero-hashtag">#façapartedessemovimento</div>
+                    <div class="hero-hashtag">#ConexõesExtraordinárias</div>
                 </div>
             </section>
             
             <!-- Countdown Section -->
             <section class="countdown-section" id="countdown">
                             <h2 class="countdown-title">Algo especial está chegando</h2>
-                <p class="countdown-subtitle">A chave que você recebeu guarda segredos que poucos conhecem. Uma revelação extraordinária está por vir... Mantenha-se atento!</p>
+                <p class="countdown-subtitle">Sua chave dourada abre portas para uma rede global de líderes que transformam visões em realidade. O futuro começa agora.</p>
                 <div class="countdown" id="countdown-timer">
                     <div class="countdown-item">
                         <span class="countdown-number" id="days">00</span>
@@ -1358,18 +1377,18 @@
 
             <!-- Golden Ticket -->
             <section class="golden-ticket" id="golden-ticket">
-                <h2 class="ticket-title">🎫 House Experience Liberado</h2>
+                <h2 class="ticket-title">Sua Entrada Para o Extraordinário</h2>
                 <p class="ticket-text">
-                    <strong>O momento chegou! O House Experience SPFC está oficialmente aberto.</strong><br>
-                    Venha descobrir um mundo onde futebol, luxo e exclusividade se encontram.<br>
-                    Agende sua visita com nosso Concierge.
+                    <strong>É hora de transformar conexões em oportunidades!</strong><br>
+                    O House Experience SPFC conecta você a uma rede global de visionários.<br>
+                    Inicie uma conversa e descubra como fazer parte dessa jornada.
                 </p>
-                <a href="https://wa.me/5511913079456?text=Olá! Gostaria de agendar uma visita ao House Experience SPFC. Vim através do evento de lançamento." class="btn btn-primary pulse" target="_blank">Marque sua Visita</a>
+                <a href="https://wa.me/5511913079456?text=Olá! Gostaria de conhecer mais sobre o Sweet Secrets Members Club e o House Experience SPFC." class="btn btn-primary pulse" target="_blank">Iniciar Conversa</a>
             </section>
 
             <!-- CTA Section -->
             <section style="text-align: center; margin: 80px 0;">
-                <a href="#" class="btn btn-primary">📸 Fotos do Evento</a>
+                <a href="#" class="btn btn-primary">Explore Nossa Rede Global</a>
             </section>
 
             <!-- About Section -->
@@ -1377,7 +1396,7 @@
                 <div class="container">
                     <div class="about-content">
                         <div class="about-header">
-                            <h2 class="main-about-title">O encontro de hoje foi desenhado em parceria com o Sweet Secrets Members Club</h2>
+                            <h2 class="main-about-title">Uma parceria com o Sweet Secrets Members Club</h2>
                             <h1 class="sub-about-title countdown-style">O que é o Sweet Secrets Members Club?</h1>
                         </div>
                         
@@ -1385,22 +1404,22 @@
                             <!-- Main Content -->
                             <div class="about-main-content">
                                 <div class="about-intro">
-                                    Escondido no coração de São Paulo, mais que um clube — um refúgio de exclusividade pensado para as lideranças mais seletivas.
+                                    Uma rede global onde líderes visionários transformam conexões em legados e ideias em movimentos que definem o futuro.
                                 </div>
                                 
                                 <div class="about-body">
                                     <div class="about-column">
-                                        <p>Reunimos uma comunidade de acesso restrito em um universo de encontros e trocas sob medida — para quem sabe que o verdadeiro luxo mora no inacessível.</p>
-                                        <p>Cada detalhe foi cuidadosamente desenhado para tornar rotineiro aquilo que parecia impossível de alcançar.</p>
+                                        <p>Somos uma comunidade global de C-levels, founders e investidores focada em gerar impacto real por meio de conexões estratégicas.</p>
+                                        <p>Como membro, você integra um ecossistema exclusivo que reúne perfis complementares, criando pontes para parcerias e oportunidades de negócio antes inacessíveis.</p>
                                     </div>
                                     <div class="about-column">
-                                        <p>Ao tornar-se membro, você passa a viver experiências extraordinárias em nossos espaços secretos, participa de eventos além das portas do clube.</p>
-                                        <p>Desbloqueia convites a experiências que poucos têm acesso — uma nova perspectiva sobre exclusividade e conexões autênticas.</p>
+                                        <p>Nosso calendário de encontros e painéis fechados coloca você lado a lado com as maiores lideranças do mercado, em formatos que priorizam profundidade, objetividade e troca de insights relevantes.</p>
+                                        <p>No Sweet Secrets, cada interação é projetada para acelerar resultados, ampliar sua influência e transformar ideias em projetos de alto valor.</p>
                                     </div>
                                 </div>
 
                                 <div class="about-highlight">
-                                    <p>Um lugar onde o valor das conexões se mede pela profundidade das conversas, não pela altura dos cargos.</p>
+                                    <p>Onde portas se abrem não por quem você conhece hoje, mas pelo que podem criar juntos amanhã.</p>
                                 </div>
                             </div>
 
@@ -1432,16 +1451,16 @@
 
                                 <div class="about-stats">
                                     <div class="about-stat">
-                                        <div class="stat-label">Estabelecido</div>
-                                        <div class="stat-value">São Paulo</div>
+                                        <div class="stat-label">Alcance</div>
+                                        <div class="stat-value">Global</div>
                                     </div>
                                     <div class="about-stat">
                                         <div class="stat-label">Filosofia</div>
-                                        <div class="stat-value">O extraordinário como rotina</div>
+                                        <div class="stat-value">Conexões com propósito</div>
                                     </div>
                                     <div class="about-stat">
                                         <div class="stat-label">Comunidade</div>
-                                        <div class="stat-value">Líderes de Mercado</div>
+                                        <div class="stat-value">Líderes visionários</div>
                                     </div>
                                 </div>
                             </div>
@@ -1449,7 +1468,7 @@
 
                         <!-- Final Quote -->
                         <div class="about-final-quote">
-                            <p>Para quem entende que exclusividade não é sobre ter, mas sobre pertencer.</p>
+                            <p>Para quem entende que o verdadeiro poder está em transformar conexões em legados.</p>
                         </div>
                     </div>
                 </div>
@@ -1457,13 +1476,13 @@
 
             <!-- Membership Features -->
             <section class="membership-features">
-                <h2 class="features-title">Benefícios Exclusivos da Membership</h2>
+                <h2 class="features-title">O Poder da Nossa Rede</h2>
                 <div class="features-preview">
                     <p class="features-description">
-                        Descubra os privilégios únicos que esperam por você como membro do Sweet Secrets Club
+                        Descubra como o Sweet Secrets transforma conexões em oportunidades extraordinárias
                     </p>
                     <button class="features-toggle" id="features-toggle">
-                        <span class="toggle-text">Ver Benefícios</span>
+                        <span class="toggle-text">Explorar Nossa Rede</span>
                         <i class="fas fa-chevron-down toggle-icon"></i>
                     </button>
                 </div>
@@ -1473,11 +1492,11 @@
                         <div class="benefit-content">
                             <div class="benefit-header">
                                 <div class="benefit-icon"></div>
-                                <h3 class="benefit-title">Espaço Físico como Ativo Estratégico</h3>
+                                <h3 class="benefit-title">Rede Global de Influência</h3>
                             </div>
                             <p class="benefit-description">
-                                A atmosfera de <strong>speakeasy</strong> transporta nossos membros para um ambiente <strong>intimista</strong>, 
-                                <strong>sofisticado e reservado</strong>, ideal para <strong>conexões discretas</strong>, encontros relevantes e momentos de pausa com excelência.
+                                Acesso direto a uma <strong>comunidade curada</strong> de líderes em múltiplos continentes. 
+                                De <strong>São Paulo a Nova York, de Londres a Singapura</strong>, nossa rede abre portas que outros nem sabem que existem.
                             </p>
                         </div>
                     </div>
@@ -1486,11 +1505,11 @@
                         <div class="benefit-content">
                             <div class="benefit-header">
                                 <div class="benefit-icon"></div>
-                                <h3 class="benefit-title">Serviços On-Demand</h3>
+                                <h3 class="benefit-title">Curadoria de Oportunidades</h3>
                             </div>
                             <p class="benefit-description">
-                                Em qualquer momento, conte com a gente. Concierge <strong>24/7 altamente personalizado</strong> 
-                                para agendar reuniões, reservar espaços e coordenar visitas: tudo com <strong>agilidade</strong>, mesmo à distância.
+                                Nosso time identifica e conecta você às <strong>oportunidades mais exclusivas</strong> do mercado: 
+                                investimentos early-stage, <strong>parcerias estratégicas</strong>, e acesso antecipado a <strong>tendências que moldarão o futuro</strong>.
                             </p>
                         </div>
                     </div>
@@ -1499,11 +1518,12 @@
                         <div class="benefit-content">
                             <div class="benefit-header">
                                 <div class="benefit-icon"></div>
-                                <h3 class="benefit-title">Conexões Estratégicas 1:1</h3>
+                                <h3 class="benefit-title">Matchmaking Estratégico</h3>
                             </div>
                             <p class="benefit-description">
-                                <strong>Matchmaking estratégico</strong>: o <strong>único lugar em São Paulo</strong> que oferece encontros direcionados 
-                                com <strong>C-Levels, founders e investidores</strong>, além de mentorias e consultorias <strong>sob medida</strong>.
+                                <strong>Algoritmo humano</strong> que conecta mentes brilhantes: apresentamos você aos 
+                                <strong>parceiros ideais</strong> para seus projetos, aos <strong>mentores que transformarão sua visão</strong>, 
+                                e aos <strong>investidores alinhados</strong> com seu propósito.
                             </p>
                         </div>
                     </div>
@@ -1512,11 +1532,12 @@
                         <div class="benefit-content">
                             <div class="benefit-header">
                                 <div class="benefit-icon"></div>
-                                <h3 class="benefit-title">Acesso a Jantares, Imersões e Eventos</h3>
+                                <h3 class="benefit-title">Experiências Transformadoras</h3>
                             </div>
                             <p class="benefit-description">
-                                Ao longo do ano, membros são convidados para jantares com <strong>nomes influentes do mercado</strong>, 
-                                imersões que provocam <strong>novas perspectivas</strong> e encontros que transitam entre o reservado e o <strong>extraordinário</strong>.
+                                De <strong>expedições com líderes globais</strong> a <strong>masterminds exclusivos</strong>, 
+                                criamos momentos que expandem horizontes. Imagine debater o futuro da IA com <strong>pioneiros do Vale do Silício</strong> 
+                                ou explorar <strong>mercados emergentes</strong> com quem está moldando suas economias.
                             </p>
                         </div>
                     </div>
@@ -1525,12 +1546,12 @@
                         <div class="benefit-content">
                             <div class="benefit-header">
                                 <div class="benefit-icon"></div>
-                                <h3 class="benefit-title">Clube como Plataforma</h3>
+                                <h3 class="benefit-title">Inteligência Coletiva</h3>
                             </div>
                             <p class="benefit-description">
-                                Mais que um local físico, somos um <strong>hub de experiências e influência</strong>. 
-                                Com agenda ativa de talks e painéis com <strong>personalidades nacionais e internacionais</strong>, 
-                                conectamos você a <strong>líderes que moldam o futuro</strong>.
+                                Acesso ao <strong>conhecimento combinado</strong> de toda nossa rede: insights exclusivos sobre 
+                                <strong>mercados globais</strong>, tendências antes que se tornem mainstream, e a sabedoria coletiva 
+                                de quem está <strong>criando o futuro</strong>, não apenas prevendo-o.
                             </p>
                         </div>
                     </div>
@@ -1607,7 +1628,7 @@
             } else {
                 grid.classList.add('collapsed');
                 toggle.classList.remove('expanded');
-                toggleText.textContent = 'Ver Benefícios';
+                toggleText.textContent = 'Explorar Nossa Rede';
             }
         });
     </script>
