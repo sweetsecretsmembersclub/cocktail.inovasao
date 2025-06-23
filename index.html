@@ -229,32 +229,13 @@
             letter-spacing: 0.5px;
         }
 
-        /* Countdown Section - MOBILE OPTIMIZED */
-        .countdown-section {
-            text-align: center;
-            padding: 60px 16px 80px;
-            margin: 40px 0;
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.015), rgba(255, 255, 255, 0.005));
-            border: 1px solid rgba(255, 255, 255, 0.04);
-            border-radius: 20px;
-        }
-
-        /* Estilo compartilhado para títulos */
-        .countdown-title,
-        .countdown-style {
+        /* Sub About Title específico */
+        .sub-about-title {
             font-family: 'Playfair Display', serif;
             font-size: clamp(22px, 6vw, 36px);
             color: #f8f8f8;
             font-weight: 600;
             letter-spacing: -0.01em;
-        }
-        
-        .countdown-title {
-            margin-bottom: 16px;
-        }
-
-        /* Sub About Title específico */
-        .sub-about-title {
             margin-bottom: 80px;
             margin-top: 120px; /* BEM AFASTADO */
             line-height: 1.2;
@@ -262,90 +243,96 @@
             text-align: center;
         }
 
-        .countdown-subtitle {
-            font-size: clamp(13px, 3.5vw, 16px);
-            color: rgba(248, 248, 248, 0.6);
-            margin-bottom: 50px;
-            font-weight: 400;
-            font-family: 'Montserrat', sans-serif;
-            max-width: 500px;
-            margin-left: auto;
-            margin-right: auto;
-            margin-bottom: 50px;
-        }
-
-        .countdown {
-            display: flex;
-            justify-content: center;
-            gap: clamp(20px, 8vw, 60px);
-            margin-bottom: 40px;
-        }
-
-        .countdown-item {
+        /* Member Card Section - NEW */
+        .member-card-section {
+            padding: 80px 0;
             text-align: center;
             position: relative;
         }
 
-        .countdown-number {
-            font-size: clamp(36px, 12vw, 64px);
-            font-weight: 300;
-            color: #f8f8f8;
-            display: block;
-            line-height: 0.9;
-            font-family: 'Montserrat', sans-serif;
-            margin-bottom: 8px;
+        .card-content {
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
-        .countdown-label {
-            font-size: clamp(9px, 2.5vw, 11px);
-            color: rgba(248, 248, 248, 0.4);
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            font-weight: 500;
-            font-family: 'Montserrat', sans-serif;
-        }
-
-        .countdown-date {
-            text-align: center;
-            color: rgba(248, 248, 248, 0.8);
-            font-size: clamp(14px, 4vw, 18px);
-            font-weight: 400;
-            margin-top: 32px;
-            font-family: 'Montserrat', sans-serif;
-            letter-spacing: 0.5px;
-        }
-
-        /* Golden Ticket - MOBILE OPTIMIZED */
-        .golden-ticket {
-            display: none;
-            background: linear-gradient(135deg, #f8f8f8, #f0f0f0);
-            border-radius: 20px;
-            padding: 40px 24px;
-            margin: 60px auto;
-            max-width: 700px;
-            text-align: center;
-            color: #0a0a0a;
-            box-shadow: 0 20px 60px rgba(255, 255, 255, 0.1);
-            animation: fadeIn 1.2s ease-in-out;
-        }
-
-        .ticket-title {
+        .card-title {
             font-family: 'Playfair Display', serif;
-            font-size: clamp(24px, 6vw, 32px);
-            font-weight: 600;
+            font-size: clamp(28px, 5vw, 42px);
+            color: #f8f8f8;
             margin-bottom: 20px;
+            font-weight: 600;
+            letter-spacing: -0.01em;
+            opacity: 0;
+            animation: fadeInUp 1s ease 0.2s forwards;
         }
 
-        .ticket-text {
-            font-size: clamp(14px, 4vw, 16px);
-            margin-bottom: 32px;
-            line-height: 1.6;
+        .card-subtitle {
             font-family: 'Montserrat', sans-serif;
+            font-size: clamp(14px, 3.5vw, 18px);
+            color: rgba(248, 248, 248, 0.7);
+            margin-bottom: 48px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.6;
+            opacity: 0;
+            animation: fadeInUp 1s ease 0.4s forwards;
+        }
+
+        .card-mockup-container {
+            position: relative;
+            max-width: 900px;
+            margin: 0 auto;
+            opacity: 0;
+            animation: fadeInUp 1.2s ease 0.6s forwards;
+            padding: 0 20px;
+        }
+
+        .card-mockup-img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 16px;
+            box-shadow: 
+                0 20px 60px rgba(0, 0, 0, 0.3),
+                0 40px 120px rgba(255, 255, 255, 0.06);
+            transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .card-mockup-img:hover {
+            transform: translateY(-4px) scale(1.02);
+            box-shadow: 
+                0 30px 80px rgba(0, 0, 0, 0.35),
+                0 50px 140px rgba(255, 255, 255, 0.08);
+        }
+
+        /* Controle de visibilidade das imagens */
+        .mobile-only {
+            display: block;
+        }
+
+        .desktop-only {
+            display: none;
+        }
+
+        @media (min-width: 769px) {
+            .mobile-only {
+                display: none;
+            }
+
+            .desktop-only {
+                display: block;
+            }
         }
 
         /* Buttons - MOBILE OPTIMIZED */
         .btn {
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
             padding: 16px 32px;
             border: 1px solid rgba(255, 255, 255, 0.2);
             background: transparent;
@@ -458,8 +445,6 @@
             background-clip: text;
         }
 
-
-
         .sub-about-title::after {
             content: '';
             position: absolute;
@@ -524,8 +509,6 @@
 
         .about-column p {
             margin-bottom: 24px;
-            text-align: justify;
-            hyphens: auto;
         }
 
         .about-highlight {
@@ -628,7 +611,6 @@
             text-transform: uppercase;
             letter-spacing: 2px;
             margin-bottom: 8px;
-            white-space: nowrap;
         }
 
         .stat-value {
@@ -966,21 +948,6 @@
                 max-width: 320px; /* AUMENTADO de 220px para 320px */
             }
 
-            .countdown-section {
-                padding: 40px 12px 60px;
-                margin: 24px 0;
-                border-radius: 16px;
-            }
-
-            .countdown {
-                gap: 16px;
-                margin-bottom: 24px;
-            }
-
-            .countdown-date {
-                margin-top: 24px;
-            }
-
             .about-section {
                 padding: 80px 0;
                 margin: 40px 0;
@@ -1003,10 +970,6 @@
             .about-body {
                 grid-template-columns: 1fr;
                 gap: 24px;
-            }
-            
-            .about-column p {
-                text-align: left;
             }
 
             .about-intro {
@@ -1049,15 +1012,8 @@
                 text-align: center;
             }
             
-            .stat-label {
-                font-size: 10px;
-                white-space: normal;
-                letter-spacing: 1px;
-            }
-            
             .stat-value {
-                font-size: 13px;
-                line-height: 1.1;
+                font-size: 18px;
             }
 
             .about-highlight {
@@ -1079,12 +1035,8 @@
                 margin-bottom: 32px;
             }
 
-            .countdown-title,
             .about-text .sub-about-title {
                 font-size: clamp(24px, 7vw, 36px);
-            }
-
-            .about-text .sub-about-title {
                 margin-bottom: 50px;
                 margin-top: 80px; /* Aumentado para afastar */
                 text-align: center;
@@ -1115,12 +1067,6 @@
 
             .polaroid-frame video {
                 min-height: 240px;
-            }
-
-            .golden-ticket {
-                padding: 32px 20px;
-                margin: 40px auto;
-                border-radius: 16px;
             }
 
             .social-section {
@@ -1175,19 +1121,6 @@
                 margin-bottom: 16px;
             }
 
-            .countdown-section {
-                padding: 24px 8px 32px;
-                margin: 12px 0;
-            }
-
-            .countdown {
-                gap: 10px;
-            }
-
-            .countdown-number {
-                font-size: clamp(28px, 10vw, 48px);
-            }
-
             .hero-footer {
                 margin-top: 20px;
                 padding-top: 12px;
@@ -1200,6 +1133,29 @@
 
             .hero-hashtag {
                 font-size: 12px;
+            }
+
+            .member-card-section {
+                padding: 60px 0;
+            }
+
+            .card-title {
+                font-size: clamp(24px, 6vw, 32px);
+                margin-bottom: 16px;
+            }
+
+            .card-subtitle {
+                font-size: clamp(13px, 3.5vw, 16px);
+                margin-bottom: 32px;
+                padding: 0 20px;
+            }
+
+            .card-mockup-container {
+                padding: 0 16px;
+            }
+
+            .card-mockup-img {
+                border-radius: 12px;
             }
 
             .features-toggle {
@@ -1236,8 +1192,6 @@
                 height: 40px;
                 font-size: 14px;
             }
-
-
         }
 
         /* Extra Small Devices */
@@ -1246,16 +1200,26 @@
                 padding: 0 8px;
             }
 
-            .countdown-section {
-                padding: 20px 4px 28px;
-            }
-
-            .countdown {
-                gap: 8px;
-            }
-
             .hero-title {
                 font-size: clamp(20px, 8vw, 32px);
+            }
+
+            .member-card-section {
+                padding: 30px 0;
+            }
+
+            .card-title {
+                font-size: clamp(18px, 8vw, 24px);
+                margin-bottom: 12px;
+            }
+
+            .card-subtitle {
+                font-size: 11px;
+                margin-bottom: 20px;
+            }
+
+            .card-mockup-container {
+                padding: 0 8px;
             }
 
             .about-section {
@@ -1267,8 +1231,6 @@
                 font-size: clamp(16px, 10vw, 22px);
                 margin-bottom: 16px;
             }
-
-
 
             .about-intro {
                 font-size: clamp(15px, 8vw, 18px);
@@ -1282,11 +1244,6 @@
 
             .about-column {
                 font-size: 14px;
-            }
-            
-            .about-column p {
-                text-align: left;
-                margin-bottom: 20px;
             }
 
             .about-logo-mark {
@@ -1338,73 +1295,52 @@
                 </div>
                 <h1 class="hero-title">House Experience São Paulo FC</h1>
                 <p class="hero-description">
-                    O São Paulo FC conecta-se com líderes globais para criar um ecossistema único onde esporte, negócios e inovação convergem em oportunidades extraordinárias.<br><br>
-                    Ídolos do futebol encontram visionários de todos os setores. Aqui nascem as parcerias que definem o futuro do entretenimento, tecnologia e muito mais.
+                    Uma experiência única onde futebol, luxo e exclusividade se encontram em jogadas estratégicas com as nossas marcas favoritas, impactando gerações. Chegou a hora de transformar o Sportainment no Brasil.<br><br>
+                    Ídolos, lendas do futebol, executivos das maiores marcas do mundo e muitas conexões em uma experiência imersiva. Aqui, Criatividade, Tecnologia & Inovação jogam juntas para gerar resultados de impacto extrapolando o estádio de futebol.
                 </p>
                 <div class="hero-cta">
-                    <a href="#countdown" class="btn">Desbloqueie o Futuro</a>
+                    <a href="#about" class="btn">Descubra Mais</a>
                 </div>
                 <div class="hero-footer">
                     <div class="hero-powered">House Experience powered by Inova.SÃO (o hub de inovação do São Paulo Futebol Clube)</div>
                     <div class="hero-hashtag">#façapartedessemovimento</div>
                 </div>
             </section>
-            
-            <!-- Countdown Section -->
-            <section class="countdown-section" id="countdown">
-                            <h2 class="countdown-title">Algo especial está chegando</h2>
-                <p class="countdown-subtitle">Sua chave dourada abre portas para uma rede global de líderes que transformam visões em realidade. O futuro começa agora.</p>
-                <div class="countdown" id="countdown-timer">
-                    <div class="countdown-item">
-                        <span class="countdown-number" id="days">00</span>
-                        <span class="countdown-label">Dias</span>
-                    </div>
-                    <div class="countdown-item">
-                        <span class="countdown-number" id="hours">00</span>
-                        <span class="countdown-label">Horas</span>
-                    </div>
-                    <div class="countdown-item">
-                        <span class="countdown-number" id="minutes">00</span>
-                        <span class="countdown-label">Minutos</span>
-                    </div>
-                    <div class="countdown-item">
-                        <span class="countdown-number" id="seconds">00</span>
-                        <span class="countdown-label">Segundos</span>
+
+            <!-- Member Card Section -->
+            <section class="member-card-section">
+                <div class="container">
+                    <div class="card-content">
+                        <h2 class="card-title">Experimente a exclusividade</h2>
+                        <p class="card-subtitle">Viva o Sweet Secrets Members Club por um mês</p>
+                        <div class="card-mockup-container">
+                            <img src="card-mockup-mobile.jpg" alt="Sweet Secrets Member Card" class="card-mockup-img mobile-only">
+                            <img src="card-mockup-desktop.jpg" alt="Sweet Secrets Member Card" class="card-mockup-img desktop-only">
+                        </div>
                     </div>
                 </div>
-                <div class="countdown-date">24 de Junho • 20h00</div>
             </section>
-
-            <!-- Golden Ticket -->
-            <section class="golden-ticket" id="golden-ticket">
-                <h2 class="ticket-title">🎫 House Experience Liberado</h2>
-                <p class="ticket-text">
-                    <strong>O momento chegou! O House Experience SPFC está oficialmente aberto.</strong><br>
-                    Venha descobrir um mundo onde futebol, luxo e exclusividade se encontram.<br>
-                    Agende sua visita com nosso Concierge.
-                </p>
-                <a href="https://wa.me/5511913079456?text=Olá! Gostaria de conhecer mais sobre o Sweet Secrets Members Club e o House Experience SPFC." class="btn btn-primary pulse" target="_blank">Iniciar Conversa</a>
-            </section>
-
+            
             <!-- CTA Section -->
-            <section style="text-align: center; margin: 80px 0;">
+            <section style="text-align: center; margin: 60px 0 80px 0;">
+                <h2 style="font-family: 'Playfair Display', serif; font-size: clamp(20px, 5vw, 28px); color: #f8f8f8; margin-bottom: 24px; font-weight: 500;">Recorde os melhores momentos do evento</h2>
                 <a href="#" class="btn btn-primary">📸 Fotos do Evento</a>
             </section>
 
             <!-- About Section -->
-            <section class="about-section">
+            <section class="about-section" id="about">
                 <div class="container">
                     <div class="about-content">
                         <div class="about-header">
-                            <h2 class="main-about-title">Uma parceria com o Sweet Secrets Members Club</h2>
-                            <h1 class="sub-about-title countdown-style">O que é o Sweet Secrets Members Club?</h1>
+                            <h2 class="main-about-title">O encontro de hoje foi desenhado em parceria com o Sweet Secrets Members Club</h2>
+                            <h1 class="sub-about-title">O que é o Sweet Secrets Members Club?</h1>
                         </div>
                         
                         <div class="about-editorial">
                             <!-- Main Content -->
                             <div class="about-main-content">
                                 <div class="about-intro">
-                                    Uma rede global onde líderes visionários transformam conexões em legados e ideias em movimentos que definem o futuro.
+                                    Escondido no coração de São Paulo, mais que um clube — um refúgio de exclusividade pensado para as lideranças mais seletivas.
                                 </div>
                                 
                                 <div class="about-body">
@@ -1419,7 +1355,7 @@
                                 </div>
 
                                 <div class="about-highlight">
-                                    <p>Onde portas se abrem não por quem você conhece hoje, mas pelo que podem criar juntos amanhã.</p>
+                                    <p>Um lugar onde o valor das conexões se mede pela profundidade das conversas, não pela altura dos cargos.</p>
                                 </div>
                             </div>
 
@@ -1451,16 +1387,16 @@
 
                                 <div class="about-stats">
                                     <div class="about-stat">
-                                        <div class="stat-label">Alcance</div>
-                                        <div class="stat-value">Global</div>
+                                        <div class="stat-label">Estabelecido</div>
+                                        <div class="stat-value">São Paulo</div>
                                     </div>
                                     <div class="about-stat">
                                         <div class="stat-label">Filosofia</div>
-                                        <div class="stat-value">Conexões com propósito</div>
+                                        <div class="stat-value">O extraordinário como rotina</div>
                                     </div>
                                     <div class="about-stat">
                                         <div class="stat-label">Comunidade</div>
-                                        <div class="stat-value">Líderes visionários</div>
+                                        <div class="stat-value">Líderes de Mercado</div>
                                     </div>
                                 </div>
                             </div>
@@ -1468,7 +1404,7 @@
 
                         <!-- Final Quote -->
                         <div class="about-final-quote">
-                            <p>Para quem entende que o verdadeiro poder está em transformar conexões em legados.</p>
+                            <p>Para quem entende que exclusividade não é sobre ter, mas sobre pertencer.</p>
                         </div>
                     </div>
                 </div>
@@ -1577,31 +1513,6 @@
     </main>
 
     <script>
-        // Countdown Timer
-        const countdownDate = new Date("June 24, 2025 20:00:00").getTime();
-        
-        const countdownTimer = setInterval(function() {
-            const now = new Date().getTime();
-            const distance = countdownDate - now;
-            
-            if (distance < 0) {
-                document.querySelector(".countdown-section").style.display = "none";
-                document.getElementById("golden-ticket").style.display = "block";
-                clearInterval(countdownTimer);
-                return;
-            }
-            
-            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-            
-            document.getElementById("days").textContent = days.toString().padStart(2, '0');
-            document.getElementById("hours").textContent = hours.toString().padStart(2, '0');
-            document.getElementById("minutes").textContent = minutes.toString().padStart(2, '0');
-            document.getElementById("seconds").textContent = seconds.toString().padStart(2, '0');
-        }, 1000);
-
         // Smooth scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
