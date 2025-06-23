@@ -243,43 +243,27 @@
             text-align: center;
         }
 
-        /* Member Card Section - NEW */
-        .member-card-section {
-            padding: 80px 0;
-            text-align: center;
-            position: relative;
-        }
-
-        .card-content {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .card-title {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(28px, 5vw, 42px);
-            color: #f8f8f8;
-            margin-bottom: 20px;
-            font-weight: 600;
-            letter-spacing: -0.01em;
-            opacity: 0;
-            animation: fadeInUp 1s ease 0.2s forwards;
-        }
-
-        .card-subtitle {
+        .countdown-subtitle {
+            font-size: clamp(13px, 3.5vw, 16px);
+            color: rgba(248, 248, 248, 0.6);
+            margin-bottom: 50px;
+            font-weight: 400;
             font-family: 'Montserrat', sans-serif;
-            font-size: clamp(14px, 3.5vw, 18px);
-            color: rgba(248, 248, 248, 0.7);
-            margin-bottom: 48px;
-            max-width: 700px;
+            max-width: 500px;
             margin-left: auto;
             margin-right: auto;
-            line-height: 1.6;
-            opacity: 0;
-            animation: fadeInUp 1s ease 0.4s forwards;
+            margin-bottom: 50px;
         }
 
-        .card-mockup-container {
+        .countdown {
+            display: flex;
+            justify-content: center;
+            gap: clamp(20px, 8vw, 60px);
+            margin-bottom: 40px;
+        }
+
+        .countdown-item {
+            text-align: center;
             position: relative;
             max-width: 900px;
             margin: 0 auto;
@@ -288,43 +272,61 @@
             padding: 0 20px;
         }
 
-        .card-mockup-img {
-            width: 100%;
-            height: auto;
+        .countdown-number {
+            font-size: clamp(36px, 12vw, 64px);
+            font-weight: 300;
+            color: #f8f8f8;
             display: block;
-            border-radius: 16px;
-            box-shadow: 
-                0 20px 60px rgba(0, 0, 0, 0.3),
-                0 40px 120px rgba(255, 255, 255, 0.06);
-            transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
-            background: rgba(255, 255, 255, 0.02);
-            border: 1px solid rgba(255, 255, 255, 0.08);
+            line-height: 0.9;
+            font-family: 'Montserrat', sans-serif;
+            margin-bottom: 8px;
         }
 
-        .card-mockup-img:hover {
-            transform: translateY(-4px) scale(1.02);
-            box-shadow: 
-                0 30px 80px rgba(0, 0, 0, 0.35),
-                0 50px 140px rgba(255, 255, 255, 0.08);
+        .countdown-label {
+            font-size: clamp(9px, 2.5vw, 11px);
+            color: rgba(248, 248, 248, 0.4);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-weight: 500;
+            font-family: 'Montserrat', sans-serif;
         }
 
-        /* Controle de visibilidade das imagens */
-        .mobile-only {
-            display: block;
+        .countdown-date {
+            text-align: center;
+            color: rgba(248, 248, 248, 0.8);
+            font-size: clamp(14px, 4vw, 18px);
+            font-weight: 400;
+            margin-top: 32px;
+            font-family: 'Montserrat', sans-serif;
+            letter-spacing: 0.5px;
         }
 
-        .desktop-only {
+        /* Golden Ticket - MOBILE OPTIMIZED */
+        .golden-ticket {
             display: none;
+            background: linear-gradient(135deg, #f8f8f8, #f0f0f0);
+            border-radius: 20px;
+            padding: 40px 24px;
+            margin: 60px auto;
+            max-width: 700px;
+            text-align: center;
+            color: #0a0a0a;
+            box-shadow: 0 20px 60px rgba(255, 255, 255, 0.1);
+            animation: fadeIn 1.2s ease-in-out;
         }
 
-        @media (min-width: 769px) {
-            .mobile-only {
-                display: none;
-            }
+        .ticket-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(24px, 6vw, 32px);
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
 
-            .desktop-only {
-                display: block;
-            }
+        .ticket-text {
+            font-size: clamp(14px, 4vw, 16px);
+            margin-bottom: 32px;
+            line-height: 1.6;
+            font-family: 'Montserrat', sans-serif;
         }
 
         /* Buttons - MOBILE OPTIMIZED */
@@ -1306,17 +1308,19 @@
                     <div class="hero-hashtag">#façapartedessemovimento</div>
                 </div>
             </section>
-
-            <!-- Member Card Section -->
-            <section class="member-card-section">
-                <div class="container">
-                    <div class="card-content">
-                        <h2 class="card-title">Experimente a exclusividade</h2>
-                        <p class="card-subtitle">Viva o Sweet Secrets Members Club por um mês</p>
-                        <div class="card-mockup-container">
-                            <img src="card-mockup-mobile.jpg" alt="Sweet Secrets Member Card" class="card-mockup-img mobile-only">
-                            <img src="card-mockup-desktop.jpg" alt="Sweet Secrets Member Card" class="card-mockup-img desktop-only">
-                        </div>
+            
+            <!-- Countdown Section -->
+            <section class="countdown-section" id="countdown">
+                            <h2 class="countdown-title">Algo especial está chegando</h2>
+                <p class="countdown-subtitle">Sua chave dourada abre portas para uma rede global de líderes que transformam visões em realidade. O futuro começa agora.</p>
+                <div class="countdown" id="countdown-timer">
+                    <div class="countdown-item">
+                        <span class="countdown-number" id="days">00</span>
+                        <span class="countdown-label">Dias</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span class="countdown-number" id="hours">00</span>
+                        <span class="countdown-label">Horas</span>
                     </div>
                 </div>
             </section>
