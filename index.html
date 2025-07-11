@@ -40,30 +40,35 @@
       width: 80px;
       height: 80px;
       border-radius: 50%;
-      background-color: #f8f8f8;
+      background-color: #000;
+      border: 2px solid #fff;
       margin: 30px auto 20px;
       display: flex;
       align-items: center;
       justify-content: center;
-      transition: transform 0.3s ease;
-    }
-    .badge img {
-      width: 40px;
-      height: auto;
+      transition: transform 0.3s ease, filter 0.3s ease;
     }
     .badge:hover {
       transform: scale(1.05);
+      filter: brightness(1.2);
+    }
+    .badge img {
+      width: 36px;
+      height: 36px;
+      object-fit: contain;
     }
     .intro {
-      text-align: center;
-      max-width: 700px;
+      text-align: left;
+      max-width: 800px;
       margin: 0 auto 40px;
+      padding: 0 20px;
     }
     .intro h1 {
       font-family: 'Playfair Display', serif;
       font-size: 2.5rem;
       line-height: 1.3;
       margin-bottom: 20px;
+      text-align: center;
     }
     .intro p {
       font-size: 1.1rem;
@@ -73,18 +78,19 @@
     .cta-button {
       margin-top: 30px;
       padding: 14px 28px;
-      background: #f8f8f8;
-      color: #0a0a0a;
-      border: none;
+      background: #000;
+      color: #fff;
+      border: 2px solid #fff;
       border-radius: 28px;
       font-size: 0.9rem;
       font-weight: 500;
       text-transform: uppercase;
       cursor: pointer;
-      transition: transform 0.3s ease;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
     .cta-button:hover {
       transform: scale(1.05);
+      box-shadow: 0 0 12px rgba(255,255,255,0.4);
     }
     .split-section {
       display: flex;
@@ -106,12 +112,12 @@
     }
     .polaroid {
       background: #f8f8f8;
-      padding: 16px;
+      padding: 12px;
       border-radius: 12px;
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
       transform: rotate(-2deg);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
-      max-width: 95%;
+      width: 300px;
       margin: auto;
     }
     .polaroid:hover {
@@ -123,11 +129,17 @@
       height: auto;
       border-radius: 6px;
     }
+    .benefits-table-wrapper {
+      max-width: 800px;
+      margin: 60px auto;
+      transition: transform 0.3s ease;
+    }
+    .benefits-table-wrapper:hover {
+      transform: scale(1.02);
+    }
     .benefits-table {
       width: 100%;
       border-collapse: collapse;
-      margin-top: 60px;
-      overflow-x: auto;
       border-radius: 12px;
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
       overflow: hidden;
@@ -164,6 +176,9 @@
       .split-section {
         flex-direction: column;
       }
+      .polaroid {
+        width: 100%;
+      }
     }
   </style>
 </head>
@@ -181,28 +196,19 @@
   <section class="intro">
     <h1>O clube onde as conexões<br>mudam destinos</h1>
     <p>
-      Se você recebeu este cartão, significa que algo<br>
-      extraordinário está prestes a acontecer.<br>
-      Por 1 mês, você terá acesso a uma experiência<br>
-      selecionada do clube mais exclusivo de São Paulo.<br>
-      Durante esse período, você poderá sentir o gosto<br>
-      da exclusividade, conhecer nossos espaços e<br>
-      mergulhar em uma programação pensada para<br>
-      quem valoriza o detalhe.
+      Se você recebeu este cartão, significa que algo extraordinário está prestes a acontecer.<br><br>
+      Por 1 mês, você terá acesso a uma experiência selecionada do clube mais exclusivo de São Paulo.<br><br>
+      Durante esse período, você poderá sentir o gosto da exclusividade, conhecer nossos espaços e mergulhar em uma programação pensada para quem valoriza o detalhe.
     </p>
     <button class="cta-button">Saiba mais</button>
   </section>
 
   <section class="split-section">
     <div class="split-left">
-      <p>O Sweet Secrets é um clube para C-levels,
-        executivos e líderes de grandes empresas. Um
-        refúgio onde o tempo desacelera e os encontros
-        têm mais intenção.<br><br>
-        Com espaços únicos, experiências exclusivas e uma
-        curadoria feita à mão, o clube é o cenário de eventos
-        memoráveis, networking de alto nível e momentos que
-        não se publicam, só se vivem.</p>
+      <p>
+        O Sweet Secrets é um clube para C-levels, executivos e líderes de grandes empresas. Um refúgio onde o tempo desacelera e os encontros têm mais intenção.<br><br>
+        Com espaços únicos, experiências exclusivas e uma curadoria feita à mão, o clube é o cenário de eventos memoráveis, networking de alto nível e momentos que não se publicam, só se vivem.
+      </p>
     </div>
     <div class="split-right">
       <div class="polaroid">
@@ -214,7 +220,7 @@
     </div>
   </section>
 
-  <section id="beneficios">
+  <section class="benefits-table-wrapper">
     <h2 class="section-title">Benefícios do Membro Sweet Secrets</h2>
     <table class="benefits-table">
       <thead>
