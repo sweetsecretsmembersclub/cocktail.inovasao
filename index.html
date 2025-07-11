@@ -36,6 +36,12 @@
       font-weight: 400;
       letter-spacing: 0.5px;
     }
+    .divider {
+      width: 80%;
+      height: 1px;
+      margin: 60px auto;
+      background: linear-gradient(to right, transparent, rgba(255,255,255,0.2), transparent);
+    }
     .badge {
       width: 80px;
       height: 80px;
@@ -46,11 +52,10 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      transition: transform 0.3s ease, filter 0.3s ease;
+      transition: transform 0.3s ease;
     }
     .badge:hover {
       transform: scale(1.05);
-      filter: brightness(1.2);
     }
     .badge img {
       width: 36px;
@@ -58,7 +63,7 @@
       object-fit: contain;
     }
     .intro {
-      text-align: left;
+      text-align: center;
       max-width: 800px;
       margin: 0 auto 40px;
       padding: 0 20px;
@@ -68,7 +73,6 @@
       font-size: 2.5rem;
       line-height: 1.3;
       margin-bottom: 20px;
-      text-align: center;
     }
     .intro p {
       font-size: 1.1rem;
@@ -86,11 +90,13 @@
       font-weight: 500;
       text-transform: uppercase;
       cursor: pointer;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      transition: transform 0.3s ease, background 0.5s ease;
+      background-image: linear-gradient(135deg, #1a1a1a 0%, #333 100%);
+      background-size: 200% auto;
     }
     .cta-button:hover {
       transform: scale(1.05);
-      box-shadow: 0 0 12px rgba(255,255,255,0.4);
+      background-position: right center;
     }
     .split-section {
       display: flex;
@@ -110,19 +116,28 @@
       line-height: 1.8;
       color: rgba(255, 255, 255, 0.85);
     }
+    .curadoria-box {
+      background-color: #111;
+      padding: 30px;
+      border-radius: 12px;
+      margin-top: 20px;
+      font-size: 1rem;
+      line-height: 1.6;
+      font-family: 'Inter', sans-serif;
+      color: rgba(255,255,255,0.85);
+    }
     .polaroid {
       background: #f8f8f8;
       padding: 12px;
       border-radius: 12px;
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
       transform: rotate(-2deg);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      transition: transform 0.3s ease;
       width: 300px;
       margin: auto;
     }
     .polaroid:hover {
       transform: rotate(0deg) scale(1.03);
-      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
     }
     .polaroid video {
       width: 100%;
@@ -134,15 +149,16 @@
       margin: 60px auto;
       transition: transform 0.3s ease;
     }
-    .benefits-table-wrapper:hover {
+    .benefits-table-wrapper:hover .benefits-table {
       transform: scale(1.02);
     }
     .benefits-table {
       width: 100%;
       border-collapse: collapse;
       border-radius: 12px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      box-shadow: 0 10px 30px rgba(255, 255, 255, 0.08);
       overflow: hidden;
+      transition: transform 0.3s ease;
     }
     .benefits-table thead {
       background: rgba(255,255,255,0.05);
@@ -165,6 +181,40 @@
       font-size: 2rem;
       margin: 60px auto 20px;
       text-align: center;
+    }
+    .quote-box {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 30px;
+      font-style: italic;
+      background: #111;
+      border-radius: 12px;
+      font-size: 1.2rem;
+      color: #ddd;
+    }
+    .experience-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      margin-top: 30px;
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .experience-item {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      padding: 20px;
+      border-radius: 12px;
+      text-align: center;
+    }
+    .experience-item h4 {
+      font-size: 1rem;
+      margin-bottom: 10px;
+    }
+    .experience-item p {
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.8);
     }
     footer {
       text-align: center;
@@ -203,12 +253,18 @@
     <button class="cta-button">Saiba mais</button>
   </section>
 
+  <div class="divider"></div>
+
   <section class="split-section">
     <div class="split-left">
+      <h2 class="section-title">Para quem valoriza<br>o que não está à mostra</h2>
       <p>
         O Sweet Secrets é um clube para C-levels, executivos e líderes de grandes empresas. Um refúgio onde o tempo desacelera e os encontros têm mais intenção.<br><br>
         Com espaços únicos, experiências exclusivas e uma curadoria feita à mão, o clube é o cenário de eventos memoráveis, networking de alto nível e momentos que não se publicam, só se vivem.
       </p>
+      <div class="curadoria-box">
+        Tudo isso com um <strong>nível de curadoria que garante discrição, elegância e propósito</strong>. O resultado? Um espaço onde <strong>conhecimento, influência e ação se encontram</strong> para gerar oportunidades que não surgiriam em lugar nenhum mais.
+      </div>
     </div>
     <div class="split-right">
       <div class="polaroid">
@@ -219,6 +275,8 @@
       </div>
     </div>
   </section>
+
+  <div class="divider"></div>
 
   <section class="benefits-table-wrapper">
     <h2 class="section-title">Benefícios do Membro Sweet Secrets</h2>
@@ -231,53 +289,44 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>Acesso ao clube</td>
-          <td>Limitado</td>
-          <td>Ilimitado</td>
-        </tr>
-        <tr>
-          <td>Entrada com convidados</td>
-          <td>Até 5</td>
-          <td>✔️</td>
-        </tr>
-        <tr>
-          <td>Agendamento de reuniões na Sala VIP</td>
-          <td>✔️</td>
-          <td>✔️</td>
-        </tr>
-        <tr>
-          <td>Participação em eventos externos</td>
-          <td>✔️</td>
-          <td>✔️</td>
-        </tr>
-        <tr>
-          <td>Convites para experiências exclusivas</td>
-          <td>✔️</td>
-          <td>✔️</td>
-        </tr>
-        <tr>
-          <td>Preferência de convite</td>
-          <td>—</td>
-          <td>✔️</td>
-        </tr>
-        <tr>
-          <td>Uso do concierge para reservas e experiências</td>
-          <td>✔️</td>
-          <td>✔️</td>
-        </tr>
-        <tr>
-          <td>Networking estratégico</td>
-          <td>✔️</td>
-          <td>✔️</td>
-        </tr>
-        <tr>
-          <td>Acesso à programação da casa</td>
-          <td>✔️</td>
-          <td>✔️</td>
-        </tr>
+        <tr><td>Acesso ao clube</td><td>Limitado</td><td>Ilimitado</td></tr>
+        <tr><td>Entrada com convidados</td><td>Até 5</td><td>✔️</td></tr>
+        <tr><td>Agendamento de reuniões na Sala VIP</td><td>✔️</td><td>✔️</td></tr>
+        <tr><td>Participação em eventos externos</td><td>✔️</td><td>✔️</td></tr>
+        <tr><td>Convites para experiências exclusivas</td><td>✔️</td><td>✔️</td></tr>
+        <tr><td>Preferência de convite</td><td>—</td><td>✔️</td></tr>
+        <tr><td>Uso do concierge para reservas e experiências</td><td>✔️</td><td>✔️</td></tr>
+        <tr><td>Networking estratégico</td><td>✔️</td><td>✔️</td></tr>
+        <tr><td>Acesso à programação da casa</td><td>✔️</td><td>✔️</td></tr>
       </tbody>
     </table>
+  </section>
+
+  <div class="divider"></div>
+
+  <section>
+    <h2 class="section-title">🧩 O que você vive aqui</h2>
+    <p class="text-center" style="color: rgba(255,255,255,0.7); font-size: 1rem; text-align:center; margin-top: -10px;">
+      Para quem entende que exclusividade não é sobre ter, mas sobre pertencer.
+    </p>
+    <div class="experience-grid">
+      <div class="experience-item">
+        <h4>🧠 Conexões Estratégicas</h4>
+        <p>Talks, Boardroom, Petit Comitê, Deal Maker</p>
+      </div>
+      <div class="experience-item">
+        <h4>🍷 Ambientes Incríveis</h4>
+        <p>Sweet Secrets: reuniões, jantares e experiências únicas</p>
+      </div>
+      <div class="experience-item">
+        <h4>🎁 Vantagens Exclusivas</h4>
+        <p>Parcerias com LVMH, Osten Group, Hotel W e mais</p>
+      </div>
+      <div class="experience-item">
+        <h4>🌱 Legado Social</h4>
+        <p>Investimos em fomento ao empreendedorismo de base</p>
+      </div>
+    </div>
   </section>
 
   <footer>
