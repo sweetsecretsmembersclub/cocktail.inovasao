@@ -17,9 +17,18 @@
       text-align: center;
       background-color: #0a0a0a;
       border-bottom: 1px solid rgba(255,255,255,0.1);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 12px;
     }
     header img {
       height: 40px;
+    }
+    header span {
+      font-size: 1.2em;
+      font-weight: 500;
+      font-family: 'Playfair Display', serif;
     }
     .hero {
       text-align: center;
@@ -38,7 +47,7 @@
     }
     section {
       padding: 60px 20px;
-      max-width: 900px;
+      max-width: 1100px;
       margin: auto;
     }
     .section-title {
@@ -78,45 +87,71 @@
       color: rgba(255,255,255,0.5);
       padding: 40px 20px;
     }
+    .split-section {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      align-items: center;
+      justify-content: center;
+    }
+    .split-left, .split-right {
+      flex: 1 1 400px;
+    }
+    .split-left p {
+      font-size: 1.1em;
+      line-height: 1.6;
+      color: rgba(255, 255, 255, 0.85);
+    }
+    .video-frame video {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+    }
+    .member-card {
+      text-align: center;
+    }
+    .member-card img {
+      max-width: 600px;
+      width: 100%;
+      border-radius: 16px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    }
+    @media (max-width: 768px) {
+      .split-section {
+        flex-direction: column;
+      }
+    }
   </style>
 </head>
 <body>
   <header>
     <img src="logo.png" alt="Logo Sweet Secrets">
+    <span>Sweet Secrets Members Club</span>
   </header>
 
   <section class="hero">
-    <h1>Uma semana para descobrir o que poucos conhecem</h1>
-    <p>Se você recebeu este cartão, significa que algo extraordinário está prestes a acontecer. Por 1 mês, você terá acesso a uma experiência selecionada do clube mais exclusivo de São Paulo.</p>
+    <h1>O clube onde as conexões mudam destinos</h1>
   </section>
 
-  <div class="img-placeholder">Imagem/Vídeo do Cartão Dourado</div>
-
-  <section>
-    <h2 class="section-title">Para quem valoriza o que não está à mostra</h2>
-    <p class="text-center">O Sweet Secrets é um clube para C-levels, executivos e líderes de grandes empresas. Um refúgio onde o tempo desacelera e os encontros têm mais intenção.</p>
-  </section>
-
-  <div class="img-placeholder">Imagem do Espaço Físico</div>
-
-  <section>
-    <h2 class="section-title">Benefícios Exclusivos</h2>
-    <div class="benefits">
-      <div class="benefit">✔️ Acesso ao clube</div>
-      <div class="benefit">✔️ Entrada com convidados</div>
-      <div class="benefit">✔️ Agendamento de reuniões na Sala VIP</div>
-      <div class="benefit">✔️ Convites para experiências exclusivas</div>
-      <div class="benefit">✔️ Uso do concierge para reservas e experiências</div>
-      <div class="benefit">✔️ Acesso à programação da casa</div>
-      <div class="benefit">✔️ Networking estratégico</div>
+  <section class="split-section">
+    <div class="split-left">
+      <p>Se você recebeu este cartão, significa que algo extraordinário está prestes a acontecer.<br><br>
+      Por 1 mês, você terá acesso a uma experiência selecionada do clube mais exclusivo de São Paulo.<br><br>
+      Durante esse período, você poderá sentir o gosto da exclusividade, conhecer nossos espaços e mergulhar em uma programação pensada para quem valoriza o detalhe.</p>
+    </div>
+    <div class="split-right video-frame">
+      <video autoplay muted loop playsinline poster="video-thumb.jpg">
+        <source src="cartao-dourado.mp4" type="video/mp4">
+        Seu navegador não suporta o vídeo.
+      </video>
     </div>
   </section>
 
-  <div class="img-placeholder">Imagem de Evento Exclusivo</div>
-
-  <section>
-    <h2 class="section-title">A porta está aberta</h2>
-    <p class="text-center">Mais do que pertencer: aqui, você participa. Fale com nossa equipe e descubra como se tornar um membro oficial do Sweet Secrets Members Club.</p>
+  <section class="member-card">
+    <h2 class="section-title">Experimente a exclusividade</h2>
+    <p>Viva o Sweet Secrets Members Club por um mês</p>
+    <img src="card-mockup-desktop.jpg" alt="Sweet Secrets Member Card">
   </section>
 
   <footer>
