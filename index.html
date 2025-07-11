@@ -49,16 +49,17 @@
       width: 80px;
       height: 80px;
       border-radius: 50%;
-      background-color: #000;
-      border: 1px solid #fff;
+      background-color: transparent;
+      border: 0.5px solid #fff;
       margin: 30px auto 20px;
       display: flex;
       align-items: center;
       justify-content: center;
-      transition: transform 0.3s ease;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
     .badge:hover {
-      transform: scale(1.05);
+      transform: scale(1.08);
+      box-shadow: 0 0 8px rgba(255,255,255,0.3);
     }
     .badge img {
       width: 36px;
@@ -85,180 +86,29 @@
     .cta-button {
       margin-top: 30px;
       padding: 14px 28px;
-      background: #000;
+      background: transparent;
       color: #fff;
-      border: 1px solid #fff;
+      border: 0.5px solid #fff;
       border-radius: 28px;
       font-size: 0.9rem;
       font-weight: 500;
       text-transform: uppercase;
       cursor: pointer;
-      transition: all 0.6s ease-in-out;
+      transition: all 0.4s ease;
     }
     .cta-button:hover {
-      transform: scale(1.05);
+      transform: scale(1.08);
+      box-shadow: 0 0 8px rgba(255,255,255,0.3);
     }
-    .split-section {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 60px;
-      align-items: center;
-      justify-content: center;
-      padding: 60px 20px;
-      max-width: 1100px;
-      margin: auto;
-    }
-    .split-left, .split-right {
-      flex: 1 1 460px;
-    }
-    .split-left h2 {
-      font-size: 2.2rem;
-      text-align: left;
-    }
-    .split-left p {
+    .benefits-intro {
+      max-width: 800px;
+      margin: 0 auto 40px;
+      text-align: center;
       font-size: 1.05rem;
-      line-height: 1.8;
-      text-align: left;
+      line-height: 1.6;
       color: rgba(255, 255, 255, 0.85);
     }
-    .curadoria-box {
-      background-color: #111;
-      padding: 30px;
-      border-radius: 12px;
-      margin-top: 20px;
-      font-size: 1rem;
-      line-height: 1.6;
-      font-family: 'Inter', sans-serif;
-      color: rgba(255,255,255,0.85);
-      border-left: 2px solid #ffffff;
-    }
-    .polaroid {
-      background: #f8f8f8;
-      padding: 12px;
-      border-radius: 12px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-      transform: rotate(-2deg);
-      transition: transform 0.3s ease;
-      width: 300px;
-      margin: auto;
-    }
-    .polaroid:hover {
-      transform: rotate(0deg) scale(1.03);
-    }
-    .polaroid video {
-      width: 100%;
-      height: auto;
-      border-radius: 6px;
-    }
-    .benefits-table-wrapper {
-      max-width: 800px;
-      margin: 60px auto;
-      transition: transform 0.3s ease;
-    }
-    .benefits-table-wrapper:hover .benefits-table {
-      transform: scale(1.02);
-    }
-    .benefits-table {
-      width: 100%;
-      border-collapse: collapse;
-      border-radius: 12px;
-      box-shadow: none;
-      overflow: hidden;
-      transition: transform 0.3s ease;
-    }
-    .benefits-table thead {
-      background: rgba(255,255,255,0.05);
-    }
-    .benefits-table th, .benefits-table td {
-      padding: 14px 20px;
-      border: 1px solid rgba(255,255,255,0.1);
-      text-align: left;
-      font-size: 0.95rem;
-    }
-    .benefits-table th {
-      font-family: 'Playfair Display', serif;
-      font-size: 1rem;
-    }
-    .benefits-table td {
-      color: rgba(255,255,255,0.9);
-    }
-    .section-title {
-      font-family: 'Playfair Display', serif;
-      font-size: 2.4rem;
-      margin: 60px auto 20px;
-      text-align: center;
-    }
-    .experience-toggle {
-      text-align: center;
-      margin: 30px 0;
-    }
-    .experience-toggle button {
-      background: #000;
-      color: #fff;
-      border: 1px solid #fff;
-      padding: 12px 24px;
-      border-radius: 24px;
-      cursor: pointer;
-      font-size: 0.9rem;
-      text-transform: uppercase;
-      transition: all 0.5s ease-in-out;
-    }
-    .experience-toggle button:hover {
-      transform: scale(1.05);
-    }
-    .experience-list {
-      display: none;
-      flex-direction: column;
-      gap: 20px;
-      max-width: 800px;
-      margin: 40px auto;
-    }
-    .experience-block {
-      background: #111;
-      padding: 24px;
-      border-radius: 12px;
-      border-left: 2px solid #fff;
-      opacity: 0;
-      transform: translateY(20px);
-      transition: all 0.6s ease-out;
-    }
-    .experience-block.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    .experience-block h4 {
-      margin: 0 0 10px;
-      font-size: 1.1rem;
-    }
-    .experience-block p {
-      margin: 0;
-      font-size: 0.95rem;
-      color: rgba(255,255,255,0.85);
-    }
-    footer {
-      text-align: center;
-      font-size: 0.9em;
-      color: rgba(255,255,255,0.5);
-      padding: 40px 20px;
-    }
   </style>
-  <script>
-    function toggleExperiences() {
-      const list = document.getElementById('experienceList');
-      const blocks = list.querySelectorAll('.experience-block');
-      const isVisible = list.style.display === 'flex';
-      list.style.display = isVisible ? 'none' : 'flex';
-      if (!isVisible) {
-        setTimeout(() => {
-          blocks.forEach((block, i) => {
-            setTimeout(() => block.classList.add('visible'), i * 150);
-          });
-        }, 100);
-      } else {
-        blocks.forEach(block => block.classList.remove('visible'));
-      }
-    }
-  </script>
 </head>
 <body>
   <header>
@@ -282,85 +132,11 @@
 
   <div class="divider"></div>
 
-  <section class="split-section">
-    <div class="split-left">
-      <h2 class="section-title">Para quem valoriza<br>o que não está à mostra</h2>
-      <p>
-        O Sweet Secrets é um clube para C-levels, executivos e líderes de grandes empresas. Um refúgio onde o tempo desacelera e os encontros têm mais intenção.<br><br>
-        Com espaços únicos, experiências exclusivas e uma curadoria feita à mão, o clube é o cenário de eventos memoráveis, networking de alto nível e momentos que não se publicam, só se vivem.
-      </p>
-      <div class="curadoria-box">
-        Tudo isso com um <strong>nível de curadoria que garante discrição, elegância e propósito</strong>. O resultado? Um espaço onde <strong>conhecimento, influência e ação se encontram</strong> para gerar oportunidades que não surgiriam em lugar nenhum mais.
-      </div>
+  <section id="beneficios">
+    <div class="benefits-intro">
+      Fazer parte do Members Club by Sweet Secrets não é apenas um privilégio, é uma ferramenta estratégica. Aqui, os benefícios não estão em quantidade, mas na qualidade das oportunidades que você passa a acessar.
     </div>
-    <div class="split-right">
-      <div class="polaroid">
-        <video autoplay muted loop playsinline poster="video-thumb.jpg">
-          <source src="cartao-dourado.mp4" type="video/mp4">
-          Seu navegador não suporta o vídeo.
-        </video>
-      </div>
-    </div>
+    <!-- Conteúdo da seção de benefícios continua aqui -->
   </section>
-
-  <div class="divider"></div>
-
-  <section id="beneficios" class="benefits-table-wrapper">
-    <h2 class="section-title">Benefícios do Membro Sweet Secrets</h2>
-    <table class="benefits-table">
-      <thead>
-        <tr><th>Benefício</th><th>Golden Guest (1 mês)</th><th>Membro</th></tr>
-      </thead>
-      <tbody>
-        <tr><td>Acesso ao clube</td><td>Limitado</td><td>Ilimitado</td></tr>
-        <tr><td>Entrada com convidados</td><td>Até 5</td><td>✔️</td></tr>
-        <tr><td>Agendamento de reuniões na Sala VIP</td><td>✔️</td><td>✔️</td></tr>
-        <tr><td>Participação em eventos externos</td><td>✔️</td><td>✔️</td></tr>
-        <tr><td>Convites para experiências exclusivas</td><td>✔️</td><td>✔️</td></tr>
-        <tr><td>Preferência de convite</td><td>—</td><td>✔️</td></tr>
-        <tr><td>Uso do concierge para reservas e experiências</td><td>✔️</td><td>✔️</td></tr>
-        <tr><td>Networking estratégico</td><td>✔️</td><td>✔️</td></tr>
-        <tr><td>Acesso à programação da casa</td><td>✔️</td><td>✔️</td></tr>
-      </tbody>
-    </table>
-  </section>
-
-  <div class="divider"></div>
-
-  <section>
-    <h2 class="section-title">O que você vive aqui?</h2>
-    <p class="text-center" style="color: rgba(255,255,255,0.7); font-size: 1rem; text-align:center; margin-top: -10px;">
-      Para quem entende que exclusividade não é sobre ter, mas sobre pertencer.
-    </p>
-    <div class="experience-toggle">
-      <button onclick="toggleExperiences()">Descubra</button>
-    </div>
-    <div class="experience-list" id="experienceList">
-      <div class="experience-block">
-        <h4>Espaço Físico como Ativo Estratégico</h4>
-        <p>A atmosfera de <strong>speakeasy</strong> transporta nossos membros para um ambiente <strong>intimista, sofisticado e reservado</strong>, ideal para <strong>conexões discretas, encontros relevantes</strong> e momentos de pausa com excelência.</p>
-      </div>
-      <div class="experience-block">
-        <h4>Serviços On-Demand</h4>
-        <p>Em qualquer momento, conte com a gente. Concierge <strong>24/7 altamente personalizado</strong> para agendar reuniões, reservar espaços e coordenar visitas: tudo com <strong>agilidade</strong>, mesmo à distância.</p>
-      </div>
-      <div class="experience-block">
-        <h4>Conexões Estratégicas 1:1</h4>
-        <p><strong>Matchmaking estratégico</strong>: o <strong>único lugar em São Paulo</strong> que oferece encontros direcionados com <strong>C-Levels, founders e investidores</strong>, além de mentorias e consultorias <strong>sob medida</strong>.</p>
-      </div>
-      <div class="experience-block">
-        <h4>Acesso a Jantares, Imersões e Eventos</h4>
-        <p>Ao longo do ano, membros são convidados para jantares com <strong>nomes influentes do mercado</strong>, imersões que provocam <strong>novas perspectivas</strong> e encontros que transitam entre o reservado e o <strong>extraordinário</strong>.</p>
-      </div>
-      <div class="experience-block">
-        <h4>Clube como Plataforma</h4>
-        <p>Mais que um local físico, somos um <strong>hub de experiências e influência</strong>. Com agenda ativa de talks e painéis com <strong>personalidades nacionais e internacionais</strong>, conectamos você a <strong>líderes que moldam o futuro</strong>.</p>
-      </div>
-    </div>
-  </section>
-
-  <footer>
-    © Sweet Secrets Members Club · Exclusividade além do óbvio
-  </footer>
 </body>
 </html>
