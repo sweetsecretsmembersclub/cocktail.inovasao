@@ -347,6 +347,98 @@
   transform: scale(1.08);
   box-shadow: 0 0 8px rgba(255,255,255,0.3);
 }
+
+    @media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    gap: 8px;
+    padding: 16px 20px;
+  }
+
+  .intro h1 {
+    font-size: 2rem;
+  }
+
+  .intro p {
+    font-size: 1rem;
+  }
+
+  .split-section {
+    flex-direction: column;
+    padding: 40px 20px;
+  }
+
+  .split-left, .split-right {
+    flex: 1 1 100%;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .exclusive-image-wrapper {
+    padding: 0;
+  }
+
+  .exclusive-subtitle {
+    font-size: 1rem;
+    padding: 0 10px;
+  }
+
+  .cta-button, .cta-white, .experience-toggle button {
+    width: 100%;
+    font-size: 1rem;
+    padding: 14px;
+  }
+
+  .benefits-table thead {
+    display: none;
+  }
+
+  .benefits-table, .benefits-table tbody, .benefits-table tr, .benefits-table td {
+    display: block;
+    width: 100%;
+  }
+
+  .benefits-table tr {
+    margin-bottom: 20px;
+    border: 1px solid rgba(255,255,255,0.1);
+    padding: 10px;
+    border-radius: 10px;
+  }
+
+  .benefits-table td {
+    text-align: left;
+    padding: 8px 12px;
+    position: relative;
+    font-size: 0.95rem;
+  }
+
+  .benefits-table td::before {
+    content: attr(data-label);
+    font-weight: bold;
+    display: block;
+    margin-bottom: 4px;
+    color: rgba(255,255,255,0.6);
+  }
+
+  .footer-icons {
+    flex-direction: row;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .footer-icons a {
+    width: 42px;
+    height: 42px;
+    font-size: 18px;
+  }
+
+  .polaroid {
+    width: 100%;
+    margin-top: 20px;
+  }
+}
     
   </style>
   <script>
@@ -431,21 +523,62 @@
   Fazer parte do Members Club by Sweet Secrets não é apenas um privilégio, é uma ferramenta estratégica. Aqui, os benefícios não estão em quantidade, mas na qualidade das oportunidades que você passa a acessar.
      </div>
     <table class="benefits-table">
-      <thead>
-        <tr><th>Benefício</th><th>Golden Guest (1 mês)</th><th>Membro</th></tr>
-      </thead>
-      <tbody>
-        <tr><td>Acesso ao clube</td><td>Limitado</td><td>Ilimitado</td></tr>
-        <tr><td>Entrada com convidados</td><td>Até 5</td><td>✔️</td></tr>
-        <tr><td>Agendamento de reuniões na Sala VIP</td><td>✔️</td><td>✔️</td></tr>
-        <tr><td>Participação em eventos externos</td><td>✔️</td><td>✔️</td></tr>
-        <tr><td>Convites para experiências exclusivas</td><td>✔️</td><td>✔️</td></tr>
-        <tr><td>Preferência de convite</td><td>—</td><td>✔️</td></tr>
-        <tr><td>Uso do concierge para reservas e experiências</td><td>✔️</td><td>✔️</td></tr>
-        <tr><td>Networking estratégico</td><td>✔️</td><td>✔️</td></tr>
-        <tr><td>Acesso à programação da casa</td><td>✔️</td><td>✔️</td></tr>
-      </tbody>
-    </table>
+  <thead>
+    <tr>
+      <th>Benefício</th>
+      <th>Golden Guest (1 mês)</th>
+      <th>Membro</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td data-label="Benefício">Acesso ao clube</td>
+      <td data-label="Golden Guest (1 mês)">Limitado</td>
+      <td data-label="Membro">Ilimitado</td>
+    </tr>
+    <tr>
+      <td data-label="Benefício">Entrada com convidados</td>
+      <td data-label="Golden Guest (1 mês)">Até 5</td>
+      <td data-label="Membro">✔️</td>
+    </tr>
+    <tr>
+      <td data-label="Benefício">Agendamento de reuniões na Sala VIP</td>
+      <td data-label="Golden Guest (1 mês)">✔️</td>
+      <td data-label="Membro">✔️</td>
+    </tr>
+    <tr>
+      <td data-label="Benefício">Participação em eventos externos</td>
+      <td data-label="Golden Guest (1 mês)">✔️</td>
+      <td data-label="Membro">✔️</td>
+    </tr>
+    <tr>
+      <td data-label="Benefício">Convites para experiências exclusivas</td>
+      <td data-label="Golden Guest (1 mês)">✔️</td>
+      <td data-label="Membro">✔️</td>
+    </tr>
+    <tr>
+      <td data-label="Benefício">Preferência de convite</td>
+      <td data-label="Golden Guest (1 mês)">—</td>
+      <td data-label="Membro">✔️</td>
+    </tr>
+    <tr>
+      <td data-label="Benefício">Uso do concierge para reservas e experiências</td>
+      <td data-label="Golden Guest (1 mês)">✔️</td>
+      <td data-label="Membro">✔️</td>
+    </tr>
+    <tr>
+      <td data-label="Benefício">Networking estratégico</td>
+      <td data-label="Golden Guest (1 mês)">✔️</td>
+      <td data-label="Membro">✔️</td>
+    </tr>
+    <tr>
+      <td data-label="Benefício">Acesso à programação da casa</td>
+      <td data-label="Golden Guest (1 mês)">✔️</td>
+      <td data-label="Membro">✔️</td>
+    </tr>
+  </tbody>
+</table>
+
   </section>
 
   <div class="divider"></div>
